@@ -104,6 +104,8 @@ class LearningAgent(Agent):
         # print("QQQQQ", self.Q)
         return
 
+    def isclose(self,f1,f2):
+        return abs(f1-f2) <= 1e-03
 
     def choose_action(self, state):
         """ The choose_action function is called when the agent is asked to choose
@@ -128,9 +130,22 @@ class LearningAgent(Agent):
                 print("CHOOSING RANDOM LEARNING ACTION",action)
             else:
                 state_str = json.dumps(state)
-                sorted_actions = sorted(self.Q[state_str].items(), key=operator.itemgetter(1))
-                action = sorted_actions[-1][0]
-                print("CHOOSING LEARNING ACTION",action," from:",sorted_actions)
+
+                descending_scores = sorted(self.Q[state_str].items(), key=operator.itemgetter(1))
+                descending_scores.reverse()
+
+                # This makes sure that if there are more than one action with equal scores we choose randomly
+                # between them.
+                highest_scoring = [ ]
+                highest_score = descending_scores[0][1]
+
+                for idx,a in enumerate(descending_scores):
+                    if (highest_score==None and a[1]==None) or self.isclose(a[1], highest_score):
+                        highest_scoring.append(a)
+                    else:
+                        break
+                action = random.choice(highest_scoring)[0]
+                print("CHOOSING LEARNING ACTION",action," from:",descending_scores)
         else:
             action = self.valid_actions[random.randint(0,3)]
             print("CHOOSING RANDOM ACTION",action)

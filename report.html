@@ -2872,7 +2872,7 @@ $$ \epsilon = a^t, \textrm{for } 0 < a < 1 \hspace{50px}\epsilon = \frac{1}{t^2}
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[25]:</div>
+<div class="prompt input_prompt">In&nbsp;[27]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython2"><pre><span></span><span class="c1"># Load the &#39;sim_improved-learning&#39; file from the improved Q-Learning simulation</span>
@@ -5161,20 +5161,60 @@ YII=
 <li>I used  self.epsilon = self.epsilon - 0.002 as the updated to epsilon. </li>
 <li>Since the update is so low, the system does about 500 training trials before testing. </li>
 <li>I used the default tolerance of 0.05 and alpha learning rate of 0.7 so that the model weighs newer rewards more than the old values. </li>
-<li><p>Improvement was significant:
-|Metric   | Now   | Previous  |
-|---|---|---|
-|Bad Decisions - Average   | ~0 at end of trainig  | 50%  |
-|Major | ~0%  | 6%  |
-|Minor  | ~0%   | 4%  |
-|%age of bad actions that result in accidents   | ~0%  | 29%  |
-|   |   |   |
-|Rate of Reliability   | <span style="color:green">~90%</span>  | 10%  |
-| MAX Rate of Reliability   | <span style="color:green">90%</span>  | 10%  |
-| Rewards Per Action  | <span style="color:green">2</span>  | -5  |</p>
-</li>
-<li><p>Yes the Q-Learner results show that the driving agent successfullly learned an appropriate policy.</p>
-</li>
+<li>Improvement was significant:</li>
+</ul>
+<table>
+<thead><tr>
+<th>Metric</th>
+<th>Now</th>
+<th>Previous</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Bad Decisions - Average</td>
+<td>~0 at end of trainig</td>
+<td>50%</td>
+</tr>
+<tr>
+<td>Major</td>
+<td>~0%</td>
+<td>6%</td>
+</tr>
+<tr>
+<td>Minor</td>
+<td>~0%</td>
+<td>4%</td>
+</tr>
+<tr>
+<td>%age of bad actions that result in accidents</td>
+<td>~0%</td>
+<td>29%</td>
+</tr>
+<tr>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>Rate of Reliability</td>
+<td><span style="color:green">~90%</span></td>
+<td>10%</td>
+</tr>
+<tr>
+<td>MAX Rate of Reliability</td>
+<td><span style="color:green">90%</span></td>
+<td>10%</td>
+</tr>
+<tr>
+<td>Rewards Per Action</td>
+<td><span style="color:green">2</span></td>
+<td>-5</td>
+</tr>
+</tbody>
+</table>
+<ul>
+<li>Yes the Q-Learner results show that the driving agent successfullly learned an appropriate policy. </li>
 <li>Yes I am satisfied with A+ safety but I think reliability could be higher than A.  </li>
 </ul>
 
@@ -5273,11 +5313,12 @@ STATE: ["right", {"light": "green", "oncoming": "left", "right": "left", "left":
 <p><strong>Answer:</strong></p>
 <p>The two charactersitics that invalidate the use of future rewards in the Q-Learning Algorithm are:</p>
 <ol>
-<li><p>The environment is constructed such that traversing one block is independent of traversing the next block after that. This is because the smartcab already knows the direction it needs to take. Thus adding a negative value will only decrease the Q-values without any benefits.</p>
+<li><p>The smartcab already knows the time left (which is encoded in the waypoint) and thus this negates the need to use discounted future rewards for this purpose.</p>
 </li>
-<li><p>I can't figure out the other one.</p>
+<li><p>The environment (ie. the path to the destination) is not deterministic - ie, there is more than one path to the same destination. The only way that discounted-future-rewards would be useful is if the smartcab knew different paths from the environment and used the negative to figure out which steps were on which path. So the environment would have to let us know if a particular action was in an optimal path or not.</p>
 </li>
 </ol>
+<p>Does that answer the question?</p>
 
 </div>
 </div>
