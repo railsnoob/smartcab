@@ -1,0 +1,3730 @@
+/-----------------------------------------
+| State-action rewards from Q-Learning
+\-----------------------------------------
+
+["forward", {"light": "red", "oncoming": "forward", "right": null, "left": "forward"}, 24]
+ -- forward : 0.00
+ -- right : 0.00
+ -- None : 0.00
+ -- left : -23.86
+
+["left", {"light": "red", "oncoming": "forward", "right": null, "left": "left"}, 19]
+ -- forward : -5.85
+ -- right : 0.00
+ -- None : 0.00
+ -- left : 0.00
+
+["left", {"light": "red", "oncoming": "forward", "right": "left", "left": null}, 6]
+ -- forward : 0.00
+ -- right : 0.54
+ -- None : 0.00
+ -- left : 0.00
+
+["right", {"light": "red", "oncoming": null, "right": "right", "left": null}, 5]
+ -- forward : 0.00
+ -- right : 0.00
+ -- None : 0.00
+ -- left : 0.00
+
+["right", {"light": "green", "oncoming": null, "right": null, "left": null}, 17]
+ -- forward : 0.00
+ -- right : 0.00
+ -- None : 0.00
+ -- left : 0.00
+
+["forward", {"light": "red", "oncoming": null, "right": null, "left": null}, 1]
+ -- forward : -6.04
+ -- right : 0.00
+ -- None : 0.00
+ -- left : 0.00
+
+["left", {"light": "red", "oncoming": "left", "right": null, "left": null}, 4]
+ -- forward : 0.00
+ -- right : 0.00
+ -- None : 0.00
+ -- left : 0.00
+
+["left", {"light": "green", "oncoming": "forward", "right": null, "left": "forward"}, 15]
+ -- forward : 0.50
+ -- right : 0.00
+ -- None : 0.00
+ -- left : 0.00
+
+["right", {"light": "red", "oncoming": null, "right": "forward", "left": "left"}, 24]
+ -- forward : 0.00
+ -- right : 0.00
+ -- None : 0.00
+ -- left : -24.36
+
+["right", {"light": "green", "oncoming": null, "right": null, "left": null}, 3]
+ -- forward : 0.00
+ -- right : 0.00
+ -- None : 0.00
+ -- left : 0.20
+
+["left", {"light": "red", "oncoming": "left", "right": null, "left": null}, 23]
+ -- forward : 0.00
+ -- right : 0.00
+ -- None : 0.00
+ -- left : 0.00
+
+["right", {"light": "green", "oncoming": null, "right": null, "left": null}, 27]
+ -- forward : 0.00
+ -- right : 0.00
+ -- None : 0.00
+ -- left : 0.87
+
+["left", {"light": "red", "oncoming": "left", "right": "right", "left": null}, 2]
+ -- forward : 0.00
+ -- right : 0.00
+ -- None : 0.00
+ -- left : 0.00
+
+["left", {"light": "red", "oncoming": "left", "right": "left", "left": null}, 24]
+ -- forward : 0.00
+ -- right : 0.00
+ -- None : 0.00
+ -- left : 0.00
+
+["right", {"light": "green", "oncoming": "right", "right": null, "left": "right"}, 15]
+ -- forward : 0.00
+ -- right : 0.00
+ -- None : 0.00
+ -- left : -11.53
+
+["left", {"light": "green", "oncoming": "forward", "right": "right", "left": null}, 13]
+ -- forward : 0.00
+ -- right : 0.00
+ -- None : 0.00
+ -- left : 0.00
+
+["forward", {"light": "green", "oncoming": "forward", "right": null, "left": null}, 22]
+ -- forward : 0.00
+ -- right : 0.00
+ -- None : 0.00
+ -- left : -12.34
+
+["right", {"light": "green", "oncoming": "right", "right": null, "left": null}, 11]
+ -- forward : 0.00
+ -- right : 0.00
+ -- None : 0.00
+ -- left : -12.37
+
+["right", {"light": "green", "oncoming": "left", "right": null, "left": null}, 3]
+ -- forward : 0.00
+ -- right : 0.00
+ -- None : 0.00
+ -- left : 0.00
+
+["left", {"light": "red", "oncoming": "left", "right": null, "left": "left"}, 18]
+ -- forward : 0.00
+ -- right : 0.00
+ -- None : 0.00
+ -- left : -6.07
+
+["left", {"light": "green", "oncoming": "left", "right": "left", "left": "forward"}, 22]
+ -- forward : 0.00
+ -- right : 0.00
+ -- None : 0.00
+ -- left : 0.00
+
+["left", {"light": "green", "oncoming": "left", "right": "left", "left": null}, 3]
+ -- forward : 0.00
+ -- right : 0.00
+ -- None : 0.00
+ -- left : 0.78
+
+["left", {"light": "red", "oncoming": null, "right": null, "left": "right"}, 10]
+ -- forward : 0.00
+ -- right : 0.00
+ -- None : 0.00
+ -- left : 0.00
+
+["left", {"light": "red", "oncoming": "left", "right": null, "left": "left"}, 12]
+ -- forward : 0.00
+ -- right : 0.00
+ -- None : 0.00
+ -- left : 0.00
+
+["forward", {"light": "red", "oncoming": null, "right": "left", "left": "right"}, 17]
+ -- forward : 0.00
+ -- right : 0.00
+ -- None : 0.00
+ -- left : -6.42
+
+["right", {"light": "red", "oncoming": "left", "right": null, "left": null}, 22]
+ -- forward : 0.00
+ -- right : 0.00
+ -- None : 0.00
+ -- left : 0.00
+
+["forward", {"light": "red", "oncoming": null, "right": null, "left": null}, 28]
+ -- forward : 0.00
+ -- right : 0.00
+ -- None : 0.00
+ -- left : -6.11
+
+["right", {"light": "green", "oncoming": "left", "right": null, "left": null}, 30]
+ -- forward : 0.00
+ -- right : 0.00
+ -- None : 0.00
+ -- left : 0.00
+
+["left", {"light": "green", "oncoming": null, "right": null, "left": "forward"}, 16]
+ -- forward : 1.03
+ -- right : 0.00
+ -- None : 0.00
+ -- left : 0.00
+
+["right", {"light": "red", "oncoming": null, "right": null, "left": "forward"}, 21]
+ -- forward : 0.00
+ -- right : 0.00
+ -- None : 0.00
+ -- left : 0.00
+
+["right", {"light": "green", "oncoming": "left", "right": null, "left": "left"}, 14]
+ -- forward : 0.00
+ -- right : 0.00
+ -- None : 0.00
+ -- left : 0.00
+
+["left", {"light": "green", "oncoming": "right", "right": null, "left": null}, 9]
+ -- forward : 0.00
+ -- right : 0.00
+ -- None : 0.00
+ -- left : 0.00
+
+["right", {"light": "red", "oncoming": "left", "right": null, "left": null}, 1]
+ -- forward : 0.00
+ -- right : 0.00
+ -- None : 0.00
+ -- left : -6.53
+
+["left", {"light": "red", "oncoming": "left", "right": null, "left": null}, 26]
+ -- forward : -5.68
+ -- right : 0.00
+ -- None : 0.00
+ -- left : 0.00
+
+["forward", {"light": "red", "oncoming": null, "right": null, "left": "left"}, 15]
+ -- forward : 0.00
+ -- right : 0.00
+ -- None : 0.00
+ -- left : 0.00
+
+["forward", {"light": "green", "oncoming": null, "right": null, "left": "left"}, 21]
+ -- forward : 0.00
+ -- right : 0.00
+ -- None : 0.00
+ -- left : 1.02
+
+["right", {"light": "red", "oncoming": null, "right": "right", "left": null}, 4]
+ -- forward : 0.00
+ -- right : 0.00
+ -- None : 0.00
+ -- left : -6.56
+
+["forward", {"light": "red", "oncoming": null, "right": "left", "left": null}, 12]
+ -- forward : 0.00
+ -- right : 0.00
+ -- None : 1.09
+ -- left : 0.00
+
+["right", {"light": "red", "oncoming": "right", "right": "left", "left": "forward"}, 17]
+ -- forward : 0.00
+ -- right : 0.00
+ -- None : 0.00
+ -- left : 0.00
+
+["right", {"light": "red", "oncoming": "left", "right": null, "left": "forward"}, 1]
+ -- forward : 0.00
+ -- right : 0.00
+ -- None : 0.00
+ -- left : -24.22
+
+["forward", {"light": "green", "oncoming": "left", "right": null, "left": null}, 21]
+ -- forward : 0.00
+ -- right : 0.00
+ -- None : 0.00
+ -- left : 0.34
+
+["right", {"light": "red", "oncoming": null, "right": "left", "left": null}, 29]
+ -- forward : 0.00
+ -- right : 1.27
+ -- None : 0.00
+ -- left : 0.00
+
+["right", {"light": "red", "oncoming": "left", "right": null, "left": "right"}, 6]
+ -- forward : 0.00
+ -- right : 0.00
+ -- None : 0.00
+ -- left : -5.74
+
+["right", {"light": "red", "oncoming": null, "right": null, "left": null}, 7]
+ -- forward : 0.00
+ -- right : 0.00
+ -- None : 0.00
+ -- left : -5.74
+
+["right", {"light": "red", "oncoming": "left", "right": null, "left": null}, 12]
+ -- forward : 0.00
+ -- right : 0.00
+ -- None : 0.00
+ -- left : 0.00
+
+["left", {"light": "red", "oncoming": "right", "right": null, "left": null}, 19]
+ -- forward : -5.69
+ -- right : 0.00
+ -- None : 0.00
+ -- left : 0.00
+
+["right", {"light": "green", "oncoming": null, "right": null, "left": "left"}, 12]
+ -- forward : -0.08
+ -- right : 0.00
+ -- None : 0.00
+ -- left : 0.00
+
+["left", {"light": "green", "oncoming": null, "right": "left", "left": null}, 5]
+ -- forward : -0.16
+ -- right : 0.00
+ -- None : 0.00
+ -- left : 0.00
+
+["right", {"light": "green", "oncoming": "left", "right": null, "left": null}, 6]
+ -- forward : 0.00
+ -- right : 0.00
+ -- None : 0.00
+ -- left : 0.00
+
+["forward", {"light": "red", "oncoming": null, "right": null, "left": "forward"}, 13]
+ -- forward : 0.00
+ -- right : 0.00
+ -- None : 0.00
+ -- left : -24.34
+
+["right", {"light": "red", "oncoming": null, "right": null, "left": "right"}, 16]
+ -- forward : 0.00
+ -- right : 0.00
+ -- None : 0.00
+ -- left : -5.90
+
+["right", {"light": "green", "oncoming": "right", "right": null, "left": null}, 23]
+ -- forward : 0.00
+ -- right : 0.00
+ -- None : 0.00
+ -- left : -12.52
+
+["left", {"light": "green", "oncoming": null, "right": null, "left": "right"}, 4]
+ -- forward : 0.00
+ -- right : 0.00
+ -- None : 0.00
+ -- left : 1.16
+
+["left", {"light": "green", "oncoming": "forward", "right": "right", "left": null}, 15]
+ -- forward : 0.00
+ -- right : 0.00
+ -- None : -3.54
+ -- left : 0.00
+
+["right", {"light": "red", "oncoming": "forward", "right": "forward", "left": "right"}, 8]
+ -- forward : 0.00
+ -- right : 0.00
+ -- None : 0.00
+ -- left : -23.58
+
+["forward", {"light": "green", "oncoming": null, "right": null, "left": "right"}, 15]
+ -- forward : 0.00
+ -- right : 0.00
+ -- None : 0.00
+ -- left : 0.83
+
+["left", {"light": "green", "oncoming": "forward", "right": null, "left": "left"}, 19]
+ -- forward : 0.00
+ -- right : 0.00
+ -- None : 0.00
+ -- left : 0.00
+
+["right", {"light": "green", "oncoming": "forward", "right": null, "left": null}, 20]
+ -- forward : 0.00
+ -- right : 0.00
+ -- None : -3.09
+ -- left : 0.00
+
+["forward", {"light": "red", "oncoming": "left", "right": "left", "left": "forward"}, 8]
+ -- forward : 0.00
+ -- right : 0.00
+ -- None : 0.00
+ -- left : -24.54
+
+["forward", {"light": "green", "oncoming": null, "right": null, "left": null}, 15]
+ -- forward : 0.00
+ -- right : 0.00
+ -- None : 0.00
+ -- left : 0.48
+
+["forward", {"light": "green", "oncoming": "left", "right": null, "left": "forward"}, 1]
+ -- forward : 0.00
+ -- right : 0.00
+ -- None : 0.43
+ -- left : -0.05
+
+["forward", {"light": "red", "oncoming": null, "right": null, "left": "forward"}, 1]
+ -- forward : 0.00
+ -- right : 0.00
+ -- None : 0.97
+ -- left : 0.00
+
+["left", {"light": "red", "oncoming": null, "right": null, "left": null}, 5]
+ -- forward : -6.59
+ -- right : 0.00
+ -- None : 0.00
+ -- left : -6.50
+
+["left", {"light": "green", "oncoming": null, "right": "forward", "left": null}, 21]
+ -- forward : 0.00
+ -- right : 0.00
+ -- None : 0.00
+ -- left : 1.08
+
+["right", {"light": "red", "oncoming": "forward", "right": null, "left": null}, 4]
+ -- forward : 0.00
+ -- right : 0.00
+ -- None : 0.00
+ -- left : -6.41
+
+["forward", {"light": "green", "oncoming": "left", "right": "right", "left": "forward"}, 2]
+ -- forward : 0.00
+ -- right : 0.00
+ -- None : 0.00
+ -- left : 0.41
+
+["left", {"light": "red", "oncoming": "forward", "right": null, "left": null}, 5]
+ -- forward : 0.00
+ -- right : 0.00
+ -- None : 0.00
+ -- left : 0.00
+
+["forward", {"light": "red", "oncoming": "forward", "right": "left", "left": "left"}, 15]
+ -- forward : 0.00
+ -- right : 0.00
+ -- None : 0.00
+ -- left : 0.00
+
+["right", {"light": "red", "oncoming": null, "right": null, "left": null}, 18]
+ -- forward : 0.00
+ -- right : 1.10
+ -- None : 0.00
+ -- left : 0.00
+
+["left", {"light": "green", "oncoming": "forward", "right": null, "left": null}, 4]
+ -- forward : 0.00
+ -- right : 0.00
+ -- None : 0.00
+ -- left : 0.00
+
+["left", {"light": "red", "oncoming": null, "right": "left", "left": null}, 6]
+ -- forward : -6.17
+ -- right : 0.00
+ -- None : 0.00
+ -- left : 0.00
+
+["forward", {"light": "green", "oncoming": null, "right": "forward", "left": "forward"}, 3]
+ -- forward : 0.00
+ -- right : 0.00
+ -- None : 0.00
+ -- left : 0.22
+
+["right", {"light": "green", "oncoming": null, "right": null, "left": null}, 7]
+ -- forward : 0.00
+ -- right : 0.00
+ -- None : 0.00
+ -- left : 0.19
+
+["left", {"light": "green", "oncoming": null, "right": null, "left": null}, 27]
+ -- forward : 0.00
+ -- right : 0.00
+ -- None : 0.00
+ -- left : 0.00
+
+["left", {"light": "red", "oncoming": "forward", "right": null, "left": null}, 18]
+ -- forward : -5.98
+ -- right : 0.00
+ -- None : 0.00
+ -- left : 0.00
+
+["forward", {"light": "red", "oncoming": "left", "right": "forward", "left": "right"}, 23]
+ -- forward : 0.00
+ -- right : 0.00
+ -- None : 0.00
+ -- left : -23.79
+
+["right", {"light": "green", "oncoming": "forward", "right": "left", "left": null}, 29]
+ -- forward : 0.00
+ -- right : 0.00
+ -- None : 0.00
+ -- left : 0.00
+
+["right", {"light": "red", "oncoming": "left", "right": "right", "left": null}, 15]
+ -- forward : 0.00
+ -- right : 0.00
+ -- None : 0.00
+ -- left : 0.00
+
+["right", {"light": "red", "oncoming": null, "right": null, "left": "forward"}, 13]
+ -- forward : 0.00
+ -- right : 0.00
+ -- None : 0.00
+ -- left : -23.84
+
+["forward", {"light": "green", "oncoming": "right", "right": null, "left": null}, 7]
+ -- forward : 0.00
+ -- right : 0.00
+ -- None : 0.00
+ -- left : -11.91
+
+["forward", {"light": "red", "oncoming": "left", "right": null, "left": "forward"}, 30]
+ -- forward : 0.00
+ -- right : 0.00
+ -- None : 0.00
+ -- left : 0.00
+
+["forward", {"light": "red", "oncoming": null, "right": null, "left": null}, 14]
+ -- forward : 0.00
+ -- right : 0.00
+ -- None : 0.00
+ -- left : 0.00
+
+["forward", {"light": "red", "oncoming": null, "right": "left", "left": null}, 2]
+ -- forward : 0.00
+ -- right : 0.00
+ -- None : 0.00
+ -- left : -6.26
+
+["forward", {"light": "green", "oncoming": "left", "right": "left", "left": null}, 6]
+ -- forward : 0.00
+ -- right : 0.00
+ -- None : 0.00
+ -- left : 0.62
+
+["right", {"light": "green", "oncoming": null, "right": "left", "left": "forward"}, 15]
+ -- forward : 0.00
+ -- right : 0.00
+ -- None : 0.00
+ -- left : 0.17
+
+["right", {"light": "green", "oncoming": null, "right": "forward", "left": "forward"}, 13]
+ -- forward : 0.52
+ -- right : 0.00
+ -- None : 0.00
+ -- left : 0.00
+
+["forward", {"light": "green", "oncoming": "left", "right": null, "left": null}, 10]
+ -- forward : 0.00
+ -- right : 1.03
+ -- None : 0.00
+ -- left : 0.00
+
+["right", {"light": "green", "oncoming": "right", "right": null, "left": null}, 15]
+ -- forward : 0.00
+ -- right : 0.00
+ -- None : 0.00
+ -- left : -12.20
+
+["left", {"light": "red", "oncoming": null, "right": "right", "left": null}, 25]
+ -- forward : 0.00
+ -- right : 0.00
+ -- None : 0.00
+ -- left : -6.57
+
+["right", {"light": "green", "oncoming": null, "right": null, "left": "forward"}, 18]
+ -- forward : 0.00
+ -- right : 0.00
+ -- None : 0.00
+ -- left : 0.00
+
+["right", {"light": "green", "oncoming": "left", "right": null, "left": null}, 11]
+ -- forward : 0.00
+ -- right : 0.00
+ -- None : 0.00
+ -- left : 0.00
+
+["right", {"light": "red", "oncoming": "left", "right": "forward", "left": "left"}, 4]
+ -- forward : 0.00
+ -- right : 0.00
+ -- None : 0.00
+ -- left : 0.00
+
+["forward", {"light": "green", "oncoming": "left", "right": null, "left": null}, 19]
+ -- forward : 0.00
+ -- right : 0.00
+ -- None : 0.00
+ -- left : 0.69
+
+["right", {"light": "red", "oncoming": "forward", "right": null, "left": null}, 24]
+ -- forward : 0.00
+ -- right : 0.00
+ -- None : 0.00
+ -- left : 0.00
+
+["forward", {"light": "red", "oncoming": "left", "right": "left", "left": "right"}, 8]
+ -- forward : 0.00
+ -- right : 0.00
+ -- None : 0.00
+ -- left : 0.00
+
+["right", {"light": "red", "oncoming": null, "right": null, "left": null}, 16]
+ -- forward : 0.00
+ -- right : 0.00
+ -- None : 0.00
+ -- left : -6.09
+
+["right", {"light": "green", "oncoming": "left", "right": null, "left": "left"}, 6]
+ -- forward : 0.00
+ -- right : 0.48
+ -- None : 0.00
+ -- left : 0.00
+
+["right", {"light": "red", "oncoming": "left", "right": "right", "left": null}, 8]
+ -- forward : 0.00
+ -- right : 0.00
+ -- None : 0.00
+ -- left : -5.58
+
+["left", {"light": "red", "oncoming": "left", "right": "forward", "left": "left"}, 2]
+ -- forward : 0.00
+ -- right : 0.00
+ -- None : 0.00
+ -- left : -23.57
+
+["right", {"light": "green", "oncoming": null, "right": null, "left": null}, 12]
+ -- forward : -0.05
+ -- right : 0.00
+ -- None : 0.00
+ -- left : 0.06
+
+["forward", {"light": "green", "oncoming": "forward", "right": null, "left": null}, 9]
+ -- forward : 0.00
+ -- right : 0.00
+ -- None : 0.00
+ -- left : 0.00
+
+["left", {"light": "green", "oncoming": null, "right": null, "left": "left"}, 16]
+ -- forward : 0.05
+ -- right : 0.00
+ -- None : 0.00
+ -- left : 0.00
+
+["right", {"light": "red", "oncoming": "right", "right": null, "left": null}, 1]
+ -- forward : 0.00
+ -- right : 0.00
+ -- None : 0.00
+ -- left : 0.00
+
+["forward", {"light": "red", "oncoming": null, "right": null, "left": "right"}, 7]
+ -- forward : -5.74
+ -- right : 0.00
+ -- None : 0.00
+ -- left : 0.00
+
+["right", {"light": "red", "oncoming": null, "right": "left", "left": null}, 12]
+ -- forward : 0.00
+ -- right : 0.00
+ -- None : 0.00
+ -- left : 0.00
+
+["right", {"light": "green", "oncoming": null, "right": null, "left": null}, 14]
+ -- forward : 0.00
+ -- right : 0.00
+ -- None : 0.00
+ -- left : 0.92
+
+["left", {"light": "red", "oncoming": "left", "right": null, "left": "left"}, 15]
+ -- forward : 0.00
+ -- right : 0.00
+ -- None : 0.90
+ -- left : 0.00
+
+["forward", {"light": "green", "oncoming": null, "right": "forward", "left": "left"}, 7]
+ -- forward : 0.00
+ -- right : 0.00
+ -- None : -2.43
+ -- left : 0.00
+
+["right", {"light": "green", "oncoming": "forward", "right": null, "left": "left"}, 3]
+ -- forward : 0.69
+ -- right : 0.00
+ -- None : 0.00
+ -- left : 0.00
+
+["left", {"light": "red", "oncoming": "left", "right": null, "left": null}, 10]
+ -- forward : 0.00
+ -- right : 0.00
+ -- None : 0.00
+ -- left : -5.82
+
+["right", {"light": "red", "oncoming": "left", "right": null, "left": null}, 5]
+ -- forward : 0.00
+ -- right : 0.95
+ -- None : 0.00
+ -- left : 0.00
+
+["left", {"light": "red", "oncoming": null, "right": null, "left": null}, 11]
+ -- forward : 0.00
+ -- right : 0.00
+ -- None : 0.00
+ -- left : 0.00
+
+["left", {"light": "green", "oncoming": "left", "right": null, "left": null}, 2]
+ -- forward : 0.00
+ -- right : 0.00
+ -- None : 0.00
+ -- left : 0.00
+
+["forward", {"light": "red", "oncoming": null, "right": "left", "left": "left"}, 4]
+ -- forward : 0.00
+ -- right : 0.00
+ -- None : 0.95
+ -- left : 0.00
+
+["forward", {"light": "red", "oncoming": "right", "right": null, "left": null}, 8]
+ -- forward : 0.00
+ -- right : 0.00
+ -- None : 0.00
+ -- left : -24.46
+
+["forward", {"light": "green", "oncoming": "right", "right": null, "left": null}, 22]
+ -- forward : 0.00
+ -- right : 0.00
+ -- None : 0.00
+ -- left : -12.04
+
+["forward", {"light": "red", "oncoming": "forward", "right": null, "left": null}, 20]
+ -- forward : 0.00
+ -- right : 0.00
+ -- None : 0.00
+ -- left : -5.68
+
+["forward", {"light": "red", "oncoming": null, "right": null, "left": "forward"}, 17]
+ -- forward : -23.72
+ -- right : 0.00
+ -- None : 0.00
+ -- left : 0.00
+
+["right", {"light": "red", "oncoming": "left", "right": null, "left": null}, 16]
+ -- forward : 0.00
+ -- right : 0.00
+ -- None : 0.00
+ -- left : -5.91
+
+["forward", {"light": "red", "oncoming": "left", "right": null, "left": null}, 2]
+ -- forward : 0.00
+ -- right : 0.00
+ -- None : 0.00
+ -- left : -5.71
+
+["forward", {"light": "green", "oncoming": null, "right": null, "left": null}, 18]
+ -- forward : 1.59
+ -- right : 0.00
+ -- None : 0.00
+ -- left : 0.78
+
+["right", {"light": "green", "oncoming": "left", "right": null, "left": null}, 2]
+ -- forward : 0.00
+ -- right : 0.62
+ -- None : 0.00
+ -- left : 0.00
+
+["left", {"light": "green", "oncoming": "left", "right": null, "left": null}, 9]
+ -- forward : 0.00
+ -- right : 1.01
+ -- None : 0.00
+ -- left : 0.00
+
+["forward", {"light": "red", "oncoming": "forward", "right": null, "left": null}, 25]
+ -- forward : 0.00
+ -- right : 0.00
+ -- None : 0.00
+ -- left : -8.26
+
+["forward", {"light": "red", "oncoming": null, "right": "forward", "left": "forward"}, 20]
+ -- forward : 0.00
+ -- right : -12.43
+ -- None : 0.00
+ -- left : 0.00
+
+["right", {"light": "red", "oncoming": null, "right": null, "left": "right"}, 22]
+ -- forward : 0.00
+ -- right : 1.59
+ -- None : 0.00
+ -- left : 0.00
+
+["forward", {"light": "green", "oncoming": "forward", "right": "forward", "left": "right"}, 8]
+ -- forward : 0.00
+ -- right : 0.00
+ -- None : 0.00
+ -- left : -12.19
+
+["right", {"light": "red", "oncoming": "forward", "right": "left", "left": "right"}, 7]
+ -- forward : 0.00
+ -- right : 0.00
+ -- None : 0.00
+ -- left : 0.00
+
+["forward", {"light": "red", "oncoming": "left", "right": null, "left": null}, 11]
+ -- forward : 0.00
+ -- right : 0.10
+ -- None : 0.00
+ -- left : -6.58
+
+["right", {"light": "red", "oncoming": "left", "right": null, "left": null}, 2]
+ -- forward : 0.00
+ -- right : 1.25
+ -- None : 0.00
+ -- left : 0.00
+
+["left", {"light": "red", "oncoming": "left", "right": null, "left": null}, 21]
+ -- forward : 0.00
+ -- right : 0.00
+ -- None : 0.00
+ -- left : 0.00
+
+["right", {"light": "green", "oncoming": "forward", "right": null, "left": null}, 24]
+ -- forward : 0.00
+ -- right : 0.00
+ -- None : 0.00
+ -- left : -12.19
+
+["right", {"light": "red", "oncoming": null, "right": null, "left": "right"}, 13]
+ -- forward : 0.00
+ -- right : 0.00
+ -- None : 0.00
+ -- left : -6.32
+
+["right", {"light": "green", "oncoming": null, "right": null, "left": null}, 21]
+ -- forward : 0.00
+ -- right : 0.00
+ -- None : 0.00
+ -- left : 0.00
+
+["forward", {"light": "green", "oncoming": null, "right": "forward", "left": null}, 18]
+ -- forward : 0.00
+ -- right : 0.00
+ -- None : 0.00
+ -- left : 0.69
+
+["right", {"light": "red", "oncoming": null, "right": null, "left": null}, 4]
+ -- forward : 0.00
+ -- right : 0.00
+ -- None : 0.00
+ -- left : -6.31
+
+["right", {"light": "red", "oncoming": "left", "right": null, "left": "left"}, 3]
+ -- forward : 0.00
+ -- right : 0.00
+ -- None : 1.09
+ -- left : 0.00
+
+["left", {"light": "green", "oncoming": null, "right": null, "left": null}, 2]
+ -- forward : 0.00
+ -- right : 0.19
+ -- None : 0.00
+ -- left : 0.00
+
+["left", {"light": "green", "oncoming": "left", "right": null, "left": "forward"}, 16]
+ -- forward : 0.00
+ -- right : 0.00
+ -- None : 0.00
+ -- left : 0.54
+
+["left", {"light": "red", "oncoming": "forward", "right": null, "left": null}, 14]
+ -- forward : 0.00
+ -- right : 0.00
+ -- None : 0.00
+ -- left : 0.00
+
+["left", {"light": "green", "oncoming": null, "right": null, "left": "right"}, 9]
+ -- forward : 0.00
+ -- right : 0.00
+ -- None : 0.00
+ -- left : 0.00
+
+["forward", {"light": "red", "oncoming": null, "right": null, "left": null}, 9]
+ -- forward : 0.00
+ -- right : 0.00
+ -- None : 1.50
+ -- left : -5.90
+
+["left", {"light": "red", "oncoming": null, "right": null, "left": null}, 23]
+ -- forward : 0.00
+ -- right : 0.00
+ -- None : 0.00
+ -- left : -6.49
+
+["left", {"light": "green", "oncoming": "left", "right": "left", "left": null}, 19]
+ -- forward : 0.00
+ -- right : 0.00
+ -- None : 0.00
+ -- left : 0.00
+
+["forward", {"light": "green", "oncoming": null, "right": null, "left": null}, 6]
+ -- forward : 0.00
+ -- right : -0.13
+ -- None : -3.12
+ -- left : -0.22
+
+["right", {"light": "red", "oncoming": null, "right": null, "left": "forward"}, 6]
+ -- forward : 0.00
+ -- right : 0.00
+ -- None : 0.00
+ -- left : 0.00
+
+["right", {"light": "green", "oncoming": null, "right": "left", "left": null}, 17]
+ -- forward : 0.32
+ -- right : 0.00
+ -- None : 0.00
+ -- left : 0.00
+
+["forward", {"light": "green", "oncoming": null, "right": "left", "left": "right"}, 13]
+ -- forward : 0.00
+ -- right : 0.00
+ -- None : 0.00
+ -- left : 0.00
+
+["forward", {"light": "green", "oncoming": null, "right": null, "left": "forward"}, 17]
+ -- forward : 0.00
+ -- right : 0.00
+ -- None : 0.00
+ -- left : -0.07
+
+["forward", {"light": "green", "oncoming": null, "right": null, "left": null}, 20]
+ -- forward : 0.00
+ -- right : 0.00
+ -- None : 0.00
+ -- left : 0.00
+
+["left", {"light": "green", "oncoming": "right", "right": null, "left": "right"}, 9]
+ -- forward : 0.00
+ -- right : 0.00
+ -- None : 0.00
+ -- left : -12.29
+
+["left", {"light": "green", "oncoming": "left", "right": null, "left": "left"}, 10]
+ -- forward : 0.00
+ -- right : 0.00
+ -- None : 0.00
+ -- left : 0.00
+
+["forward", {"light": "green", "oncoming": null, "right": null, "left": null}, 16]
+ -- forward : 0.00
+ -- right : 0.00
+ -- None : 0.00
+ -- left : 0.94
+
+["forward", {"light": "green", "oncoming": null, "right": "right", "left": null}, 4]
+ -- forward : 0.00
+ -- right : 0.00
+ -- None : 0.00
+ -- left : -0.23
+
+["right", {"light": "red", "oncoming": "left", "right": "left", "left": "forward"}, 19]
+ -- forward : 0.00
+ -- right : 0.00
+ -- None : 0.00
+ -- left : -24.55
+
+["right", {"light": "green", "oncoming": "forward", "right": "right", "left": null}, 3]
+ -- forward : 0.00
+ -- right : 0.00
+ -- None : 0.00
+ -- left : -12.26
+
+["right", {"light": "red", "oncoming": null, "right": "forward", "left": null}, 18]
+ -- forward : 0.00
+ -- right : 0.00
+ -- None : 0.00
+ -- left : 0.00
+
+["right", {"light": "green", "oncoming": "forward", "right": null, "left": null}, 7]
+ -- forward : 0.51
+ -- right : 0.00
+ -- None : 0.00
+ -- left : 0.00
+
+["forward", {"light": "green", "oncoming": "left", "right": "forward", "left": null}, 9]
+ -- forward : 0.00
+ -- right : 0.00
+ -- None : 0.00
+ -- left : 0.49
+
+["forward", {"light": "red", "oncoming": "left", "right": null, "left": "left"}, 27]
+ -- forward : 0.00
+ -- right : 0.00
+ -- None : 0.00
+ -- left : -6.31
+
+["right", {"light": "red", "oncoming": "forward", "right": "left", "left": "forward"}, 22]
+ -- forward : 0.00
+ -- right : 0.00
+ -- None : 0.00
+ -- left : 0.00
+
+["right", {"light": "green", "oncoming": null, "right": "right", "left": null}, 16]
+ -- forward : 0.00
+ -- right : 0.00
+ -- None : 0.00
+ -- left : 1.03
+
+["right", {"light": "green", "oncoming": "forward", "right": null, "left": null}, 14]
+ -- forward : 0.00
+ -- right : 0.00
+ -- None : 0.00
+ -- left : -12.21
+
+["right", {"light": "green", "oncoming": "right", "right": null, "left": null}, 19]
+ -- forward : 0.00
+ -- right : 0.00
+ -- None : 0.00
+ -- left : -11.66
+
+["right", {"light": "red", "oncoming": null, "right": null, "left": "left"}, 12]
+ -- forward : 0.00
+ -- right : 0.00
+ -- None : 0.00
+ -- left : 0.00
+
+["forward", {"light": "green", "oncoming": "left", "right": null, "left": null}, 15]
+ -- forward : 0.00
+ -- right : 0.00
+ -- None : 0.00
+ -- left : 0.18
+
+["forward", {"light": "red", "oncoming": "left", "right": null, "left": "right"}, 18]
+ -- forward : 0.00
+ -- right : 0.00
+ -- None : 0.00
+ -- left : -6.09
+
+["right", {"light": "red", "oncoming": null, "right": null, "left": null}, 28]
+ -- forward : 0.00
+ -- right : 0.00
+ -- None : 0.00
+ -- left : -6.07
+
+["forward", {"light": "red", "oncoming": null, "right": "forward", "left": null}, 7]
+ -- forward : 0.00
+ -- right : 0.00
+ -- None : 0.00
+ -- left : 0.00
+
+["right", {"light": "red", "oncoming": "left", "right": "right", "left": null}, 16]
+ -- forward : 0.00
+ -- right : 0.00
+ -- None : 0.00
+ -- left : 0.00
+
+["forward", {"light": "red", "oncoming": null, "right": null, "left": null}, 21]
+ -- forward : 0.00
+ -- right : 0.00
+ -- None : 0.00
+ -- left : -6.15
+
+["right", {"light": "red", "oncoming": null, "right": null, "left": null}, 12]
+ -- forward : 0.00
+ -- right : 0.00
+ -- None : 0.00
+ -- left : -5.81
+
+["right", {"light": "green", "oncoming": null, "right": null, "left": null}, 4]
+ -- forward : 0.47
+ -- right : 0.00
+ -- None : 0.00
+ -- left : 0.00
+
+["left", {"light": "red", "oncoming": null, "right": null, "left": "left"}, 20]
+ -- forward : 0.00
+ -- right : 0.00
+ -- None : 1.12
+ -- left : 0.00
+
+["left", {"light": "green", "oncoming": "forward", "right": "forward", "left": "right"}, 29]
+ -- forward : 0.00
+ -- right : 0.00
+ -- None : 0.00
+ -- left : -12.43
+
+["right", {"light": "red", "oncoming": null, "right": "forward", "left": "forward"}, 19]
+ -- forward : 0.00
+ -- right : 0.00
+ -- None : 0.00
+ -- left : 0.00
+
+["right", {"light": "green", "oncoming": "left", "right": null, "left": null}, 14]
+ -- forward : 0.00
+ -- right : 0.00
+ -- None : 0.00
+ -- left : 0.00
+
+["forward", {"light": "red", "oncoming": null, "right": "left", "left": null}, 28]
+ -- forward : 0.00
+ -- right : 0.00
+ -- None : 1.57
+ -- left : -5.90
+
+["forward", {"light": "red", "oncoming": null, "right": null, "left": "forward"}, 25]
+ -- forward : 0.00
+ -- right : 0.00
+ -- None : 0.00
+ -- left : 0.00
+
+["left", {"light": "red", "oncoming": "left", "right": null, "left": null}, 5]
+ -- forward : 0.00
+ -- right : 0.00
+ -- None : 0.00
+ -- left : 0.00
+
+["left", {"light": "red", "oncoming": null, "right": "right", "left": null}, 22]
+ -- forward : 0.00
+ -- right : 0.00
+ -- None : 0.00
+ -- left : -5.99
+
+["forward", {"light": "green", "oncoming": "left", "right": "right", "left": null}, 23]
+ -- forward : 0.00
+ -- right : 0.26
+ -- None : 0.00
+ -- left : 0.00
+
+["left", {"light": "red", "oncoming": "left", "right": null, "left": "left"}, 19]
+ -- forward : 0.00
+ -- right : 0.87
+ -- None : 0.91
+ -- left : 0.00
+
+["right", {"light": "green", "oncoming": null, "right": "forward", "left": null}, 14]
+ -- forward : -0.06
+ -- right : 0.00
+ -- None : 0.00
+ -- left : 0.00
+
+["forward", {"light": "red", "oncoming": "left", "right": null, "left": null}, 14]
+ -- forward : 0.00
+ -- right : 0.00
+ -- None : 0.00
+ -- left : 0.00
+
+["right", {"light": "red", "oncoming": null, "right": "left", "left": "left"}, 17]
+ -- forward : 0.00
+ -- right : 0.00
+ -- None : 0.00
+ -- left : -6.37
+
+["forward", {"light": "red", "oncoming": "left", "right": "left", "left": null}, 14]
+ -- forward : 0.00
+ -- right : 0.00
+ -- None : 0.63
+ -- left : 0.00
+
+["left", {"light": "red", "oncoming": null, "right": null, "left": "right"}, 13]
+ -- forward : 0.00
+ -- right : 0.00
+ -- None : 0.00
+ -- left : -6.13
+
+["right", {"light": "green", "oncoming": null, "right": "left", "left": "left"}, 7]
+ -- forward : 0.00
+ -- right : 0.00
+ -- None : 0.00
+ -- left : 0.00
+
+["left", {"light": "green", "oncoming": "forward", "right": "forward", "left": null}, 4]
+ -- forward : 0.00
+ -- right : 0.00
+ -- None : 0.00
+ -- left : 0.00
+
+["right", {"light": "red", "oncoming": "forward", "right": "forward", "left": null}, 23]
+ -- forward : 0.00
+ -- right : 0.00
+ -- None : 0.00
+ -- left : 0.00
+
+["forward", {"light": "green", "oncoming": null, "right": "right", "left": null}, 11]
+ -- forward : 0.00
+ -- right : 0.00
+ -- None : -3.08
+ -- left : 0.00
+
+["left", {"light": "green", "oncoming": null, "right": null, "left": "forward"}, 17]
+ -- forward : 0.00
+ -- right : 0.00
+ -- None : -3.53
+ -- left : 0.00
+
+["left", {"light": "red", "oncoming": "forward", "right": null, "left": "left"}, 1]
+ -- forward : 0.00
+ -- right : 0.00
+ -- None : 0.00
+ -- left : -5.78
+
+["left", {"light": "green", "oncoming": null, "right": null, "left": "right"}, 10]
+ -- forward : 0.00
+ -- right : 0.00
+ -- None : 0.00
+ -- left : 1.07
+
+["forward", {"light": "green", "oncoming": "right", "right": null, "left": null}, 6]
+ -- forward : 0.00
+ -- right : 0.00
+ -- None : 0.00
+ -- left : -12.40
+
+["right", {"light": "red", "oncoming": "left", "right": null, "left": null}, 23]
+ -- forward : 0.00
+ -- right : 0.00
+ -- None : 0.00
+ -- left : -5.46
+
+["right", {"light": "red", "oncoming": null, "right": "right", "left": "left"}, 3]
+ -- forward : 0.00
+ -- right : 0.00
+ -- None : 0.00
+ -- left : -6.24
+
+["forward", {"light": "green", "oncoming": "forward", "right": null, "left": null}, 4]
+ -- forward : 0.00
+ -- right : 0.00
+ -- None : -2.95
+ -- left : 0.00
+
+["forward", {"light": "green", "oncoming": "forward", "right": "left", "left": null}, 33]
+ -- forward : 0.00
+ -- right : 0.00
+ -- None : 0.00
+ -- left : -11.72
+
+["right", {"light": "red", "oncoming": "left", "right": null, "left": null}, 6]
+ -- forward : 0.00
+ -- right : 0.00
+ -- None : 0.00
+ -- left : -5.49
+
+["forward", {"light": "green", "oncoming": "forward", "right": "right", "left": null}, 19]
+ -- forward : 0.00
+ -- right : 0.00
+ -- None : 0.00
+ -- left : -12.53
+
+["left", {"light": "green", "oncoming": "left", "right": "forward", "left": "forward"}, 3]
+ -- forward : 0.00
+ -- right : 0.00
+ -- None : 0.00
+ -- left : 1.32
+
+["right", {"light": "green", "oncoming": "left", "right": null, "left": null}, 20]
+ -- forward : 0.00
+ -- right : 0.00
+ -- None : 0.00
+ -- left : 0.00
+
+["left", {"light": "green", "oncoming": null, "right": "right", "left": null}, 12]
+ -- forward : 0.00
+ -- right : 0.00
+ -- None : 0.00
+ -- left : 1.03
+
+["right", {"light": "green", "oncoming": "forward", "right": "right", "left": "forward"}, 30]
+ -- forward : 0.00
+ -- right : 0.00
+ -- None : 0.00
+ -- left : 0.00
+
+["left", {"light": "red", "oncoming": null, "right": "left", "left": "left"}, 11]
+ -- forward : 0.00
+ -- right : 0.00
+ -- None : 0.00
+ -- left : -6.42
+
+["forward", {"light": "red", "oncoming": "left", "right": null, "left": null}, 1]
+ -- forward : 0.00
+ -- right : 0.00
+ -- None : 0.98
+ -- left : 0.00
+
+["right", {"light": "red", "oncoming": "left", "right": null, "left": null}, 15]
+ -- forward : 0.00
+ -- right : 0.00
+ -- None : 0.00
+ -- left : -6.20
+
+["right", {"light": "green", "oncoming": "left", "right": null, "left": "left"}, 12]
+ -- forward : 0.00
+ -- right : 0.00
+ -- None : 0.00
+ -- left : 0.67
+
+["right", {"light": "red", "oncoming": "right", "right": "forward", "left": null}, 2]
+ -- forward : 0.00
+ -- right : 0.38
+ -- None : 0.00
+ -- left : 0.00
+
+["left", {"light": "red", "oncoming": "right", "right": null, "left": null}, 18]
+ -- forward : 0.00
+ -- right : 0.00
+ -- None : 0.00
+ -- left : 0.00
+
+["forward", {"light": "red", "oncoming": "left", "right": "right", "left": null}, 22]
+ -- forward : 0.00
+ -- right : 0.00
+ -- None : 0.00
+ -- left : -5.87
+
+["forward", {"light": "green", "oncoming": null, "right": null, "left": "right"}, 5]
+ -- forward : 0.00
+ -- right : 0.00
+ -- None : 0.00
+ -- left : 0.00
+
+["forward", {"light": "green", "oncoming": "forward", "right": null, "left": null}, 17]
+ -- forward : 0.00
+ -- right : 0.00
+ -- None : 0.00
+ -- left : -11.84
+
+["forward", {"light": "red", "oncoming": null, "right": null, "left": "forward"}, 9]
+ -- forward : 0.00
+ -- right : -12.09
+ -- None : 0.00
+ -- left : 0.00
+
+["right", {"light": "green", "oncoming": "forward", "right": "forward", "left": null}, 30]
+ -- forward : 0.00
+ -- right : 1.28
+ -- None : 0.00
+ -- left : 0.00
+
+["right", {"light": "green", "oncoming": "left", "right": null, "left": null}, 7]
+ -- forward : 0.00
+ -- right : 0.00
+ -- None : 0.60
+ -- left : 0.00
+
+["forward", {"light": "red", "oncoming": null, "right": "forward", "left": "right"}, 18]
+ -- forward : 0.00
+ -- right : 0.00
+ -- None : 0.00
+ -- left : -24.10
+
+["right", {"light": "red", "oncoming": null, "right": null, "left": "right"}, 17]
+ -- forward : 0.00
+ -- right : 0.00
+ -- None : 0.00
+ -- left : -5.55
+
+["left", {"light": "red", "oncoming": "forward", "right": "right", "left": "forward"}, 5]
+ -- forward : 0.00
+ -- right : 0.00
+ -- None : 0.00
+ -- left : -23.54
+
+["forward", {"light": "red", "oncoming": null, "right": null, "left": "forward"}, 10]
+ -- forward : 0.00
+ -- right : 0.00
+ -- None : 0.00
+ -- left : 0.00
+
+["left", {"light": "green", "oncoming": "right", "right": "left", "left": null}, 11]
+ -- forward : 0.00
+ -- right : 0.00
+ -- None : 0.00
+ -- left : -11.65
+
+["right", {"light": "green", "oncoming": null, "right": "left", "left": null}, 20]
+ -- forward : 0.00
+ -- right : 0.00
+ -- None : 0.00
+ -- left : 0.00
+
+["forward", {"light": "red", "oncoming": null, "right": null, "left": "left"}, 26]
+ -- forward : 0.00
+ -- right : 0.00
+ -- None : 0.00
+ -- left : 0.00
+
+["right", {"light": "red", "oncoming": null, "right": null, "left": null}, 9]
+ -- forward : 0.00
+ -- right : 0.00
+ -- None : 0.58
+ -- left : -6.44
+
+["left", {"light": "red", "oncoming": "forward", "right": null, "left": null}, 10]
+ -- forward : 0.00
+ -- right : 0.00
+ -- None : 0.00
+ -- left : -6.24
+
+["right", {"light": "green", "oncoming": "right", "right": "left", "left": null}, 21]
+ -- forward : 0.00
+ -- right : 0.00
+ -- None : 0.00
+ -- left : 0.00
+
+["forward", {"light": "red", "oncoming": "left", "right": "forward", "left": null}, 19]
+ -- forward : -24.26
+ -- right : 0.00
+ -- None : 0.00
+ -- left : 0.00
+
+["forward", {"light": "red", "oncoming": "forward", "right": null, "left": null}, 26]
+ -- forward : 0.00
+ -- right : 0.00
+ -- None : 0.00
+ -- left : -6.25
+
+["right", {"light": "red", "oncoming": "forward", "right": null, "left": null}, 5]
+ -- forward : 0.00
+ -- right : 0.00
+ -- None : 0.00
+ -- left : 0.00
+
+["forward", {"light": "green", "oncoming": null, "right": null, "left": null}, 12]
+ -- forward : 0.00
+ -- right : 1.00
+ -- None : 0.00
+ -- left : 0.00
+
+["right", {"light": "green", "oncoming": "forward", "right": null, "left": null}, 21]
+ -- forward : 0.00
+ -- right : 0.00
+ -- None : 0.00
+ -- left : 0.00
+
+["forward", {"light": "red", "oncoming": null, "right": null, "left": null}, 23]
+ -- forward : 0.00
+ -- right : 0.00
+ -- None : 0.83
+ -- left : 0.00
+
+["left", {"light": "green", "oncoming": "left", "right": null, "left": "forward"}, 7]
+ -- forward : 0.00
+ -- right : 0.18
+ -- None : 0.00
+ -- left : 0.00
+
+["left", {"light": "green", "oncoming": null, "right": "forward", "left": null}, 20]
+ -- forward : 0.81
+ -- right : 0.00
+ -- None : 0.00
+ -- left : 0.00
+
+["left", {"light": "green", "oncoming": null, "right": null, "left": null}, 1]
+ -- forward : 0.57
+ -- right : 0.00
+ -- None : 0.00
+ -- left : 0.00
+
+["left", {"light": "red", "oncoming": null, "right": "forward", "left": "forward"}, 14]
+ -- forward : 0.00
+ -- right : 0.00
+ -- None : 0.00
+ -- left : -24.28
+
+["forward", {"light": "green", "oncoming": null, "right": null, "left": "right"}, 13]
+ -- forward : 0.00
+ -- right : 0.00
+ -- None : 0.00
+ -- left : 0.99
+
+["forward", {"light": "green", "oncoming": null, "right": null, "left": null}, 24]
+ -- forward : 0.00
+ -- right : 0.00
+ -- None : 0.00
+ -- left : 0.00
+
+["left", {"light": "green", "oncoming": null, "right": null, "left": "left"}, 22]
+ -- forward : 0.00
+ -- right : 0.01
+ -- None : 0.00
+ -- left : 0.00
+
+["left", {"light": "green", "oncoming": "left", "right": null, "left": null}, 10]
+ -- forward : -0.00
+ -- right : 0.00
+ -- None : 0.91
+ -- left : 0.00
+
+["forward", {"light": "red", "oncoming": "left", "right": "forward", "left": null}, 12]
+ -- forward : 0.00
+ -- right : 0.00
+ -- None : 0.00
+ -- left : -23.89
+
+["left", {"light": "red", "oncoming": null, "right": null, "left": "forward"}, 6]
+ -- forward : 0.00
+ -- right : 0.00
+ -- None : 0.00
+ -- left : -24.38
+
+["right", {"light": "green", "oncoming": null, "right": null, "left": null}, 8]
+ -- forward : 0.42
+ -- right : 0.00
+ -- None : 0.00
+ -- left : 0.00
+
+["left", {"light": "green", "oncoming": null, "right": null, "left": null}, 26]
+ -- forward : 0.00
+ -- right : 0.10
+ -- None : 0.00
+ -- left : 0.00
+
+["right", {"light": "red", "oncoming": null, "right": "right", "left": "forward"}, 29]
+ -- forward : 0.00
+ -- right : 0.00
+ -- None : 0.00
+ -- left : -24.30
+
+["forward", {"light": "red", "oncoming": null, "right": null, "left": null}, 15]
+ -- forward : 0.00
+ -- right : 0.00
+ -- None : 0.00
+ -- left : -5.74
+
+["right", {"light": "red", "oncoming": null, "right": "right", "left": null}, 11]
+ -- forward : 0.00
+ -- right : 0.00
+ -- None : 0.00
+ -- left : -6.25
+
+["forward", {"light": "green", "oncoming": "forward", "right": null, "left": null}, 23]
+ -- forward : 0.00
+ -- right : 0.00
+ -- None : 0.00
+ -- left : 0.00
+
+["forward", {"light": "green", "oncoming": null, "right": null, "left": null}, 1]
+ -- forward : 0.00
+ -- right : 0.00
+ -- None : 0.00
+ -- left : -0.38
+
+["left", {"light": "red", "oncoming": "left", "right": null, "left": "left"}, 22]
+ -- forward : 0.00
+ -- right : 0.00
+ -- None : 0.00
+ -- left : -6.04
+
+["forward", {"light": "green", "oncoming": null, "right": null, "left": "left"}, 3]
+ -- forward : 0.00
+ -- right : 0.00
+ -- None : 0.00
+ -- left : 0.18
+
+["right", {"light": "green", "oncoming": "forward", "right": null, "left": null}, 4]
+ -- forward : 0.00
+ -- right : 0.00
+ -- None : 0.00
+ -- left : 0.00
+
+["right", {"light": "green", "oncoming": null, "right": "forward", "left": "forward"}, 12]
+ -- forward : 0.00
+ -- right : 0.00
+ -- None : 0.00
+ -- left : 0.00
+
+["forward", {"light": "green", "oncoming": "left", "right": null, "left": "forward"}, 17]
+ -- forward : 0.00
+ -- right : 0.00
+ -- None : 0.00
+ -- left : 1.11
+
+["forward", {"light": "green", "oncoming": "left", "right": null, "left": null}, 11]
+ -- forward : 0.00
+ -- right : 0.00
+ -- None : 0.00
+ -- left : 0.09
+
+["forward", {"light": "red", "oncoming": null, "right": null, "left": null}, 25]
+ -- forward : 0.00
+ -- right : 0.00
+ -- None : 1.99
+ -- left : -6.57
+
+["left", {"light": "green", "oncoming": "left", "right": null, "left": null}, 21]
+ -- forward : 0.00
+ -- right : 0.00
+ -- None : 0.00
+ -- left : 0.00
+
+["right", {"light": "green", "oncoming": null, "right": "forward", "left": null}, 29]
+ -- forward : 0.00
+ -- right : 0.00
+ -- None : 0.00
+ -- left : 0.47
+
+["right", {"light": "green", "oncoming": "left", "right": null, "left": null}, 10]
+ -- forward : 0.00
+ -- right : 0.00
+ -- None : 0.00
+ -- left : 0.00
+
+["right", {"light": "green", "oncoming": null, "right": null, "left": "forward"}, 30]
+ -- forward : 0.00
+ -- right : 0.00
+ -- None : 0.00
+ -- left : 1.02
+
+["forward", {"light": "red", "oncoming": null, "right": "forward", "left": "forward"}, 25]
+ -- forward : 0.00
+ -- right : 0.00
+ -- None : 0.00
+ -- left : -23.72
+
+["left", {"light": "red", "oncoming": "left", "right": "left", "left": null}, 6]
+ -- forward : 0.00
+ -- right : 0.00
+ -- None : 0.00
+ -- left : 0.00
+
+["right", {"light": "red", "oncoming": "forward", "right": null, "left": null}, 25]
+ -- forward : 0.00
+ -- right : 0.00
+ -- None : 0.00
+ -- left : -6.00
+
+["forward", {"light": "green", "oncoming": null, "right": "forward", "left": null}, 7]
+ -- forward : 0.00
+ -- right : 0.00
+ -- None : 0.00
+ -- left : 0.06
+
+["left", {"light": "red", "oncoming": "forward", "right": null, "left": "left"}, 17]
+ -- forward : 0.00
+ -- right : 0.00
+ -- None : 0.00
+ -- left : -5.80
+
+["left", {"light": "green", "oncoming": "forward", "right": "forward", "left": "right"}, 30]
+ -- forward : 0.00
+ -- right : 0.00
+ -- None : 0.00
+ -- left : -11.82
+
+["right", {"light": "green", "oncoming": null, "right": null, "left": null}, 1]
+ -- forward : 0.00
+ -- right : 0.00
+ -- None : 0.00
+ -- left : 0.00
+
+["forward", {"light": "red", "oncoming": null, "right": null, "left": null}, 3]
+ -- forward : 0.00
+ -- right : 0.00
+ -- None : 0.00
+ -- left : -6.18
+
+["right", {"light": "green", "oncoming": "forward", "right": null, "left": null}, 6]
+ -- forward : 0.00
+ -- right : 0.00
+ -- None : 0.00
+ -- left : 0.00
+
+["left", {"light": "red", "oncoming": null, "right": "forward", "left": null}, 12]
+ -- forward : -23.41
+ -- right : 0.00
+ -- None : 0.00
+ -- left : 0.00
+
+["right", {"light": "green", "oncoming": null, "right": null, "left": null}, 11]
+ -- forward : 0.00
+ -- right : 0.00
+ -- None : 0.00
+ -- left : 1.15
+
+["right", {"light": "red", "oncoming": "forward", "right": null, "left": null}, 15]
+ -- forward : 0.00
+ -- right : 0.00
+ -- None : 0.00
+ -- left : 0.00
+
+["right", {"light": "green", "oncoming": "right", "right": "left", "left": "left"}, 31]
+ -- forward : 0.00
+ -- right : 0.00
+ -- None : 0.00
+ -- left : -11.62
+
+["right", {"light": "green", "oncoming": "forward", "right": "right", "left": null}, 14]
+ -- forward : 0.00
+ -- right : 0.00
+ -- None : 0.00
+ -- left : 0.00
+
+["forward", {"light": "red", "oncoming": "left", "right": null, "left": null}, 26]
+ -- forward : 0.00
+ -- right : 0.00
+ -- None : 0.00
+ -- left : -6.35
+
+["left", {"light": "green", "oncoming": "forward", "right": null, "left": null}, 9]
+ -- forward : 0.00
+ -- right : 0.00
+ -- None : 0.00
+ -- left : -11.66
+
+["right", {"light": "red", "oncoming": null, "right": "left", "left": null}, 15]
+ -- forward : 0.00
+ -- right : 0.00
+ -- None : 0.00
+ -- left : -6.37
+
+["right", {"light": "green", "oncoming": null, "right": null, "left": null}, 5]
+ -- forward : 0.00
+ -- right : 0.00
+ -- None : 0.00
+ -- left : 0.00
+
+["right", {"light": "red", "oncoming": null, "right": null, "left": "left"}, 23]
+ -- forward : 0.00
+ -- right : 0.00
+ -- None : 0.00
+ -- left : -5.95
+
+["left", {"light": "red", "oncoming": "left", "right": "left", "left": "right"}, 23]
+ -- forward : 0.00
+ -- right : 0.00
+ -- None : 0.00
+ -- left : 0.00
+
+["right", {"light": "red", "oncoming": "left", "right": "forward", "left": "left"}, 14]
+ -- forward : 0.00
+ -- right : 1.46
+ -- None : 0.00
+ -- left : 0.00
+
+["forward", {"light": "red", "oncoming": null, "right": null, "left": null}, 7]
+ -- forward : -6.22
+ -- right : 0.62
+ -- None : 0.00
+ -- left : 0.00
+
+["right", {"light": "red", "oncoming": null, "right": null, "left": null}, 30]
+ -- forward : 0.00
+ -- right : 0.00
+ -- None : 0.62
+ -- left : 0.00
+
+["left", {"light": "green", "oncoming": "left", "right": null, "left": "left"}, 13]
+ -- forward : 0.00
+ -- right : 0.00
+ -- None : 0.00
+ -- left : 0.00
+
+["left", {"light": "green", "oncoming": "forward", "right": null, "left": "left"}, 9]
+ -- forward : 0.00
+ -- right : 0.00
+ -- None : 0.00
+ -- left : -12.02
+
+["right", {"light": "green", "oncoming": "left", "right": null, "left": "right"}, 2]
+ -- forward : 0.36
+ -- right : 0.00
+ -- None : 0.00
+ -- left : 0.00
+
+["forward", {"light": "red", "oncoming": "right", "right": null, "left": "right"}, 18]
+ -- forward : 0.00
+ -- right : 0.00
+ -- None : 0.00
+ -- left : -23.97
+
+["forward", {"light": "green", "oncoming": null, "right": null, "left": "left"}, 24]
+ -- forward : 0.00
+ -- right : 0.00
+ -- None : 0.00
+ -- left : 0.00
+
+["left", {"light": "red", "oncoming": "left", "right": null, "left": null}, 11]
+ -- forward : 0.00
+ -- right : 0.00
+ -- None : 0.76
+ -- left : -6.50
+
+["forward", {"light": "green", "oncoming": null, "right": "left", "left": null}, 25]
+ -- forward : 0.00
+ -- right : 0.00
+ -- None : 0.00
+ -- left : 0.00
+
+["left", {"light": "green", "oncoming": "right", "right": null, "left": null}, 27]
+ -- forward : 0.00
+ -- right : 0.00
+ -- None : 0.00
+ -- left : -12.35
+
+["left", {"light": "green", "oncoming": "left", "right": null, "left": null}, 1]
+ -- forward : 0.00
+ -- right : 0.00
+ -- None : 0.00
+ -- left : 0.14
+
+["left", {"light": "red", "oncoming": "forward", "right": "right", "left": "forward"}, 10]
+ -- forward : 0.00
+ -- right : 0.00
+ -- None : 0.00
+ -- left : -24.47
+
+["right", {"light": "red", "oncoming": "left", "right": null, "left": null}, 20]
+ -- forward : 0.00
+ -- right : 0.00
+ -- None : 0.00
+ -- left : -6.08
+
+["forward", {"light": "green", "oncoming": null, "right": null, "left": "forward"}, 8]
+ -- forward : 1.33
+ -- right : 0.00
+ -- None : 0.00
+ -- left : 0.00
+
+["left", {"light": "red", "oncoming": "left", "right": null, "left": "right"}, 4]
+ -- forward : 0.00
+ -- right : 0.00
+ -- None : 0.00
+ -- left : -5.58
+
+["right", {"light": "red", "oncoming": null, "right": null, "left": "forward"}, 12]
+ -- forward : 0.00
+ -- right : 0.00
+ -- None : 0.00
+ -- left : -24.44
+
+["right", {"light": "green", "oncoming": "left", "right": null, "left": "forward"}, 1]
+ -- forward : 0.00
+ -- right : 0.00
+ -- None : 0.00
+ -- left : 0.00
+
+["right", {"light": "red", "oncoming": "left", "right": null, "left": null}, 19]
+ -- forward : 0.00
+ -- right : 0.00
+ -- None : 0.98
+ -- left : 0.00
+
+["right", {"light": "green", "oncoming": null, "right": null, "left": "left"}, 19]
+ -- forward : 0.00
+ -- right : 0.84
+ -- None : 0.00
+ -- left : 0.00
+
+["left", {"light": "red", "oncoming": "left", "right": null, "left": null}, 20]
+ -- forward : 0.00
+ -- right : 0.00
+ -- None : 1.24
+ -- left : 0.00
+
+["left", {"light": "green", "oncoming": "right", "right": null, "left": null}, 20]
+ -- forward : 0.49
+ -- right : 0.00
+ -- None : 0.00
+ -- left : 0.00
+
+["forward", {"light": "green", "oncoming": "forward", "right": null, "left": "right"}, 20]
+ -- forward : 0.00
+ -- right : 0.00
+ -- None : 0.00
+ -- left : -12.15
+
+["forward", {"light": "red", "oncoming": "left", "right": null, "left": null}, 12]
+ -- forward : 0.00
+ -- right : 0.00
+ -- None : 0.00
+ -- left : -6.13
+
+["forward", {"light": "green", "oncoming": "forward", "right": null, "left": null}, 14]
+ -- forward : 0.00
+ -- right : 0.00
+ -- None : -3.22
+ -- left : -12.34
+
+["left", {"light": "green", "oncoming": "forward", "right": null, "left": "forward"}, 9]
+ -- forward : 0.00
+ -- right : 0.00
+ -- None : 0.00
+ -- left : 0.00
+
+["left", {"light": "green", "oncoming": "forward", "right": "right", "left": "left"}, 20]
+ -- forward : 0.00
+ -- right : 0.00
+ -- None : 0.00
+ -- left : 0.00
+
+["forward", {"light": "green", "oncoming": "left", "right": null, "left": null}, 27]
+ -- forward : 0.00
+ -- right : 0.00
+ -- None : 0.00
+ -- left : 0.00
+
+["forward", {"light": "red", "oncoming": "forward", "right": null, "left": "left"}, 21]
+ -- forward : 0.00
+ -- right : 0.00
+ -- None : 0.00
+ -- left : -5.62
+
+["right", {"light": "red", "oncoming": "left", "right": null, "left": null}, 8]
+ -- forward : 0.00
+ -- right : 0.00
+ -- None : 0.00
+ -- left : -5.44
+
+["right", {"light": "green", "oncoming": "left", "right": null, "left": "forward"}, 14]
+ -- forward : 0.00
+ -- right : 0.00
+ -- None : 0.00
+ -- left : 0.00
+
+["forward", {"light": "red", "oncoming": "left", "right": null, "left": null}, 4]
+ -- forward : 0.00
+ -- right : 0.00
+ -- None : 0.00
+ -- left : -6.12
+
+["left", {"light": "green", "oncoming": null, "right": "right", "left": "left"}, 22]
+ -- forward : 0.00
+ -- right : 0.00
+ -- None : 0.00
+ -- left : 1.41
+
+["forward", {"light": "red", "oncoming": null, "right": null, "left": null}, 18]
+ -- forward : 0.00
+ -- right : 0.00
+ -- None : 0.00
+ -- left : -5.83
+
+["right", {"light": "red", "oncoming": null, "right": null, "left": null}, 5]
+ -- forward : -6.25
+ -- right : 0.00
+ -- None : 0.00
+ -- left : -5.95
+
+["left", {"light": "green", "oncoming": "left", "right": "forward", "left": null}, 3]
+ -- forward : 0.00
+ -- right : 0.00
+ -- None : 0.00
+ -- left : 0.00
+
+["right", {"light": "red", "oncoming": null, "right": null, "left": null}, 20]
+ -- forward : -6.11
+ -- right : 0.00
+ -- None : 0.00
+ -- left : 0.00
+
+["right", {"light": "red", "oncoming": "right", "right": "left", "left": null}, 15]
+ -- forward : 0.00
+ -- right : 0.00
+ -- None : 0.00
+ -- left : -24.37
+
+["forward", {"light": "green", "oncoming": "right", "right": null, "left": "right"}, 19]
+ -- forward : 0.00
+ -- right : 0.00
+ -- None : -3.35
+ -- left : 0.00
+
+["forward", {"light": "green", "oncoming": "forward", "right": "right", "left": null}, 21]
+ -- forward : 0.00
+ -- right : 0.00
+ -- None : 0.00
+ -- left : -12.15
+
+["forward", {"light": "red", "oncoming": null, "right": null, "left": null}, 29]
+ -- forward : 0.00
+ -- right : 0.00
+ -- None : 0.77
+ -- left : -6.07
+
+["forward", {"light": "red", "oncoming": null, "right": null, "left": null}, 11]
+ -- forward : 0.00
+ -- right : 0.00
+ -- None : 0.00
+ -- left : 0.00
+
+["forward", {"light": "green", "oncoming": null, "right": null, "left": null}, 17]
+ -- forward : 0.00
+ -- right : 0.00
+ -- None : 0.00
+ -- left : 0.84
+
+["right", {"light": "green", "oncoming": null, "right": null, "left": "forward"}, 9]
+ -- forward : 0.00
+ -- right : 0.00
+ -- None : 0.00
+ -- left : -0.07
+
+["left", {"light": "red", "oncoming": null, "right": null, "left": null}, 22]
+ -- forward : 0.00
+ -- right : 0.00
+ -- None : 0.00
+ -- left : -6.19
+
+["forward", {"light": "green", "oncoming": null, "right": "right", "left": null}, 5]
+ -- forward : 0.00
+ -- right : 0.00
+ -- None : 0.00
+ -- left : 0.65
+
+["forward", {"light": "red", "oncoming": null, "right": null, "left": null}, 8]
+ -- forward : 0.00
+ -- right : 0.00
+ -- None : 0.00
+ -- left : -6.02
+
+["left", {"light": "red", "oncoming": "forward", "right": null, "left": null}, 7]
+ -- forward : 0.00
+ -- right : 0.00
+ -- None : 0.89
+ -- left : 0.00
+
+["left", {"light": "red", "oncoming": "left", "right": "forward", "left": null}, 2]
+ -- forward : 0.00
+ -- right : 0.00
+ -- None : 0.59
+ -- left : 0.00
+
+["left", {"light": "red", "oncoming": "left", "right": null, "left": "forward"}, 19]
+ -- forward : 0.00
+ -- right : 0.00
+ -- None : 0.00
+ -- left : -24.51
+
+["right", {"light": "red", "oncoming": null, "right": null, "left": null}, 11]
+ -- forward : 0.00
+ -- right : 1.13
+ -- None : 0.88
+ -- left : 0.00
+
+["right", {"light": "green", "oncoming": null, "right": "forward", "left": null}, 25]
+ -- forward : 0.00
+ -- right : 0.00
+ -- None : 0.00
+ -- left : -0.00
+
+["right", {"light": "green", "oncoming": "forward", "right": null, "left": null}, 13]
+ -- forward : 0.00
+ -- right : 0.00
+ -- None : 0.00
+ -- left : 0.00
+
+["left", {"light": "green", "oncoming": "left", "right": null, "left": null}, 25]
+ -- forward : 0.00
+ -- right : 0.00
+ -- None : 0.00
+ -- left : 1.58
+
+["forward", {"light": "green", "oncoming": null, "right": "forward", "left": null}, 3]
+ -- forward : 0.00
+ -- right : -0.11
+ -- None : 0.00
+ -- left : 0.00
+
+["left", {"light": "green", "oncoming": "left", "right": null, "left": "forward"}, 1]
+ -- forward : 0.00
+ -- right : 0.00
+ -- None : 0.00
+ -- left : 0.00
+
+["right", {"light": "green", "oncoming": "forward", "right": "forward", "left": null}, 3]
+ -- forward : 0.00
+ -- right : 0.00
+ -- None : 0.00
+ -- left : -12.41
+
+["left", {"light": "red", "oncoming": null, "right": null, "left": "forward"}, 23]
+ -- forward : 0.00
+ -- right : 0.00
+ -- None : 1.47
+ -- left : 0.00
+
+["right", {"light": "green", "oncoming": "left", "right": "right", "left": null}, 4]
+ -- forward : 0.00
+ -- right : 0.00
+ -- None : 0.00
+ -- left : 0.00
+
+["forward", {"light": "red", "oncoming": null, "right": null, "left": null}, 20]
+ -- forward : 0.00
+ -- right : 0.00
+ -- None : 0.00
+ -- left : -5.97
+
+["forward", {"light": "red", "oncoming": "left", "right": "forward", "left": "forward"}, 20]
+ -- forward : 0.00
+ -- right : 0.00
+ -- None : 0.00
+ -- left : -23.96
+
+["right", {"light": "green", "oncoming": "forward", "right": null, "left": null}, 9]
+ -- forward : 0.00
+ -- right : 0.00
+ -- None : 0.00
+ -- left : 0.00
+
+["forward", {"light": "red", "oncoming": "left", "right": null, "left": null}, 15]
+ -- forward : 0.00
+ -- right : 0.00
+ -- None : 0.00
+ -- left : -6.07
+
+["forward", {"light": "red", "oncoming": null, "right": null, "left": null}, 16]
+ -- forward : 0.00
+ -- right : 0.00
+ -- None : 0.64
+ -- left : -5.88
+
+["left", {"light": "green", "oncoming": null, "right": "forward", "left": "left"}, 28]
+ -- forward : 0.00
+ -- right : 0.00
+ -- None : 0.00
+ -- left : 1.68
+
+["forward", {"light": "red", "oncoming": null, "right": null, "left": "right"}, 17]
+ -- forward : 0.00
+ -- right : 0.00
+ -- None : 0.00
+ -- left : -6.47
+
+["left", {"light": "green", "oncoming": "right", "right": null, "left": null}, 12]
+ -- forward : 0.00
+ -- right : 0.00
+ -- None : 0.00
+ -- left : 0.00
+
+["right", {"light": "green", "oncoming": null, "right": null, "left": null}, 15]
+ -- forward : 0.00
+ -- right : 0.00
+ -- None : 0.00
+ -- left : 0.00
+
+["right", {"light": "green", "oncoming": "forward", "right": "forward", "left": null}, 8]
+ -- forward : 0.00
+ -- right : 0.00
+ -- None : 0.00
+ -- left : 0.00
+
+["forward", {"light": "green", "oncoming": "left", "right": null, "left": "left"}, 30]
+ -- forward : 0.00
+ -- right : 0.00
+ -- None : 0.00
+ -- left : 0.48
+
+["right", {"light": "green", "oncoming": "right", "right": null, "left": null}, 13]
+ -- forward : 0.00
+ -- right : 0.00
+ -- None : 0.00
+ -- left : -11.74
+
+["forward", {"light": "green", "oncoming": "forward", "right": null, "left": null}, 24]
+ -- forward : 0.00
+ -- right : 0.00
+ -- None : 0.00
+ -- left : -12.03
+
+["forward", {"light": "red", "oncoming": "forward", "right": null, "left": "forward"}, 21]
+ -- forward : 0.00
+ -- right : -12.27
+ -- None : 0.00
+ -- left : 0.00
+
+["forward", {"light": "green", "oncoming": "right", "right": "forward", "left": "forward"}, 6]
+ -- forward : 0.00
+ -- right : 0.00
+ -- None : 0.00
+ -- left : -12.56
+
+["right", {"light": "red", "oncoming": "forward", "right": null, "left": null}, 26]
+ -- forward : 0.00
+ -- right : 0.00
+ -- None : 0.00
+ -- left : -5.66
+
+["forward", {"light": "red", "oncoming": null, "right": null, "left": "right"}, 5]
+ -- forward : 0.00
+ -- right : 0.00
+ -- None : 0.00
+ -- left : -5.63
+
+["right", {"light": "red", "oncoming": null, "right": "left", "left": null}, 10]
+ -- forward : 0.00
+ -- right : 0.00
+ -- None : 0.54
+ -- left : 0.00
+
+["left", {"light": "green", "oncoming": "left", "right": null, "left": null}, 19]
+ -- forward : 0.00
+ -- right : 0.00
+ -- None : 0.00
+ -- left : 1.48
+
+["right", {"light": "red", "oncoming": "left", "right": null, "left": "forward"}, 7]
+ -- forward : 0.00
+ -- right : 0.00
+ -- None : 0.00
+ -- left : 0.00
+
+["right", {"light": "red", "oncoming": "left", "right": null, "left": "left"}, 14]
+ -- forward : 0.00
+ -- right : 0.00
+ -- None : 0.00
+ -- left : 0.00
+
+["left", {"light": "green", "oncoming": null, "right": null, "left": "forward"}, 18]
+ -- forward : 0.00
+ -- right : 0.00
+ -- None : -3.31
+ -- left : 0.00
+
+["left", {"light": "red", "oncoming": "left", "right": null, "left": "left"}, 2]
+ -- forward : 0.00
+ -- right : 0.00
+ -- None : 0.54
+ -- left : 0.00
+
+["right", {"light": "green", "oncoming": "left", "right": "forward", "left": "right"}, 6]
+ -- forward : 0.00
+ -- right : 0.00
+ -- None : 0.00
+ -- left : 0.68
+
+["right", {"light": "red", "oncoming": "forward", "right": "left", "left": null}, 6]
+ -- forward : 0.00
+ -- right : 0.00
+ -- None : 0.00
+ -- left : 0.00
+
+["right", {"light": "green", "oncoming": null, "right": null, "left": "left"}, 17]
+ -- forward : 0.00
+ -- right : 0.00
+ -- None : 0.00
+ -- left : 0.00
+
+["forward", {"light": "green", "oncoming": null, "right": null, "left": "right"}, 8]
+ -- forward : 0.00
+ -- right : 0.00
+ -- None : 0.00
+ -- left : 0.00
+
+["forward", {"light": "red", "oncoming": "right", "right": null, "left": null}, 24]
+ -- forward : 0.00
+ -- right : 0.00
+ -- None : 0.00
+ -- left : -23.43
+
+["right", {"light": "red", "oncoming": null, "right": "right", "left": null}, 6]
+ -- forward : 0.00
+ -- right : 0.00
+ -- None : 0.00
+ -- left : 0.00
+
+["forward", {"light": "green", "oncoming": null, "right": "right", "left": "forward"}, 11]
+ -- forward : 0.00
+ -- right : 0.00
+ -- None : 0.00
+ -- left : 0.00
+
+["left", {"light": "red", "oncoming": null, "right": null, "left": "left"}, 30]
+ -- forward : 0.00
+ -- right : 0.00
+ -- None : 0.00
+ -- left : -5.93
+
+["forward", {"light": "green", "oncoming": null, "right": "left", "left": null}, 28]
+ -- forward : 0.00
+ -- right : 0.95
+ -- None : 0.00
+ -- left : 0.00
+
+["forward", {"light": "red", "oncoming": "left", "right": null, "left": null}, 9]
+ -- forward : 0.00
+ -- right : 0.00
+ -- None : 0.00
+ -- left : 0.00
+
+["forward", {"light": "green", "oncoming": null, "right": null, "left": "left"}, 23]
+ -- forward : 0.00
+ -- right : 0.00
+ -- None : 0.00
+ -- left : 0.00
+
+["forward", {"light": "green", "oncoming": null, "right": "left", "left": null}, 32]
+ -- forward : 0.00
+ -- right : 0.00
+ -- None : 0.00
+ -- left : 0.84
+
+["forward", {"light": "red", "oncoming": null, "right": "left", "left": "right"}, 10]
+ -- forward : 0.00
+ -- right : 0.29
+ -- None : 0.00
+ -- left : 0.00
+
+["left", {"light": "green", "oncoming": null, "right": "forward", "left": "forward"}, 8]
+ -- forward : 0.00
+ -- right : 0.00
+ -- None : 0.00
+ -- left : 0.00
+
+["left", {"light": "green", "oncoming": null, "right": null, "left": null}, 17]
+ -- forward : 0.00
+ -- right : 0.00
+ -- None : 0.00
+ -- left : 0.00
+
+["left", {"light": "red", "oncoming": null, "right": "left", "left": "forward"}, 2]
+ -- forward : 0.00
+ -- right : 0.00
+ -- None : 0.00
+ -- left : 0.00
+
+["right", {"light": "green", "oncoming": "right", "right": "forward", "left": null}, 1]
+ -- forward : 0.00
+ -- right : 0.00
+ -- None : 0.00
+ -- left : -12.43
+
+["forward", {"light": "red", "oncoming": "left", "right": null, "left": "right"}, 8]
+ -- forward : 0.00
+ -- right : 0.00
+ -- None : 0.00
+ -- left : 0.00
+
+["right", {"light": "red", "oncoming": "right", "right": "left", "left": "forward"}, 25]
+ -- forward : 0.00
+ -- right : 0.00
+ -- None : 0.00
+ -- left : -23.97
+
+["left", {"light": "red", "oncoming": null, "right": null, "left": "left"}, 13]
+ -- forward : 0.00
+ -- right : 0.00
+ -- None : 0.00
+ -- left : -7.98
+
+["forward", {"light": "green", "oncoming": "forward", "right": null, "left": null}, 18]
+ -- forward : 0.00
+ -- right : 0.00
+ -- None : 0.00
+ -- left : -11.51
+
+["right", {"light": "red", "oncoming": null, "right": null, "left": null}, 1]
+ -- forward : 0.00
+ -- right : 0.00
+ -- None : 0.00
+ -- left : -5.76
+
+["forward", {"light": "green", "oncoming": null, "right": "right", "left": "forward"}, 18]
+ -- forward : 0.00
+ -- right : 0.00
+ -- None : 0.00
+ -- left : 1.14
+
+["forward", {"light": "green", "oncoming": "left", "right": null, "left": null}, 23]
+ -- forward : 0.00
+ -- right : 0.00
+ -- None : 0.00
+ -- left : 0.25
+
+["left", {"light": "red", "oncoming": null, "right": null, "left": null}, 19]
+ -- forward : 0.00
+ -- right : 0.00
+ -- None : 0.00
+ -- left : 0.00
+
+["forward", {"light": "red", "oncoming": null, "right": null, "left": "left"}, 2]
+ -- forward : 0.00
+ -- right : 0.00
+ -- None : 0.00
+ -- left : 0.00
+
+["left", {"light": "green", "oncoming": "right", "right": "left", "left": null}, 10]
+ -- forward : 0.00
+ -- right : 0.00
+ -- None : 0.00
+ -- left : -12.58
+
+["right", {"light": "green", "oncoming": "left", "right": null, "left": null}, 4]
+ -- forward : 0.00
+ -- right : 0.00
+ -- None : 0.00
+ -- left : 0.18
+
+["left", {"light": "green", "oncoming": "left", "right": "right", "left": null}, 10]
+ -- forward : 0.00
+ -- right : 0.00
+ -- None : 0.00
+ -- left : 0.00
+
+["forward", {"light": "red", "oncoming": "forward", "right": null, "left": null}, 23]
+ -- forward : 0.00
+ -- right : 0.00
+ -- None : 0.00
+ -- left : -6.56
+
+["left", {"light": "green", "oncoming": "right", "right": null, "left": null}, 14]
+ -- forward : 0.00
+ -- right : 0.00
+ -- None : 0.00
+ -- left : -11.92
+
+["right", {"light": "red", "oncoming": "right", "right": "left", "left": null}, 20]
+ -- forward : 0.00
+ -- right : 0.00
+ -- None : 0.00
+ -- left : 0.00
+
+["forward", {"light": "green", "oncoming": "right", "right": null, "left": null}, 20]
+ -- forward : 0.00
+ -- right : 0.00
+ -- None : 0.00
+ -- left : -11.61
+
+["forward", {"light": "green", "oncoming": "forward", "right": "right", "left": null}, 4]
+ -- forward : 0.00
+ -- right : 0.00
+ -- None : 0.00
+ -- left : -12.02
+
+["right", {"light": "red", "oncoming": "forward", "right": null, "left": "forward"}, 17]
+ -- forward : 0.00
+ -- right : -12.17
+ -- None : 0.00
+ -- left : 0.00
+
+["left", {"light": "green", "oncoming": null, "right": null, "left": "right"}, 16]
+ -- forward : 0.00
+ -- right : 0.00
+ -- None : 0.00
+ -- left : 0.00
+
+["right", {"light": "green", "oncoming": "left", "right": null, "left": "forward"}, 17]
+ -- forward : 0.00
+ -- right : 0.00
+ -- None : 0.00
+ -- left : 0.79
+
+["right", {"light": "green", "oncoming": null, "right": "forward", "left": "forward"}, 1]
+ -- forward : 0.00
+ -- right : 0.00
+ -- None : 0.00
+ -- left : 0.00
+
+["right", {"light": "red", "oncoming": null, "right": null, "left": "left"}, 4]
+ -- forward : 0.00
+ -- right : 0.00
+ -- None : 0.00
+ -- left : -6.25
+
+["right", {"light": "green", "oncoming": null, "right": null, "left": "forward"}, 15]
+ -- forward : 0.00
+ -- right : 0.00
+ -- None : 0.00
+ -- left : 0.18
+
+["right", {"light": "red", "oncoming": "left", "right": "left", "left": "forward"}, 1]
+ -- forward : 0.00
+ -- right : -12.54
+ -- None : 0.00
+ -- left : 0.00
+
+["right", {"light": "red", "oncoming": "right", "right": null, "left": null}, 11]
+ -- forward : 0.00
+ -- right : 0.00
+ -- None : 0.00
+ -- left : 0.00
+
+["forward", {"light": "red", "oncoming": "left", "right": null, "left": null}, 17]
+ -- forward : 0.00
+ -- right : 0.00
+ -- None : 0.00
+ -- left : 0.00
+
+["forward", {"light": "green", "oncoming": "left", "right": "left", "left": "forward"}, 3]
+ -- forward : 0.00
+ -- right : 0.00
+ -- None : 0.00
+ -- left : 0.00
+
+["left", {"light": "green", "oncoming": null, "right": "right", "left": null}, 8]
+ -- forward : 0.00
+ -- right : 0.00
+ -- None : 0.00
+ -- left : 0.00
+
+["left", {"light": "green", "oncoming": null, "right": null, "left": "right"}, 19]
+ -- forward : 0.00
+ -- right : 0.00
+ -- None : 0.00
+ -- left : 1.60
+
+["left", {"light": "red", "oncoming": "right", "right": null, "left": null}, 15]
+ -- forward : 0.00
+ -- right : 0.00
+ -- None : 0.00
+ -- left : -23.41
+
+["right", {"light": "red", "oncoming": null, "right": "left", "left": "left"}, 30]
+ -- forward : 0.00
+ -- right : 0.00
+ -- None : 0.00
+ -- left : -6.24
+
+["forward", {"light": "red", "oncoming": "forward", "right": null, "left": "left"}, 24]
+ -- forward : 0.00
+ -- right : 0.00
+ -- None : 0.00
+ -- left : -6.02
+
+["right", {"light": "green", "oncoming": "left", "right": "forward", "left": null}, 21]
+ -- forward : 0.00
+ -- right : 0.00
+ -- None : 0.00
+ -- left : 0.58
+
+["forward", {"light": "green", "oncoming": null, "right": "right", "left": "forward"}, 23]
+ -- forward : 0.00
+ -- right : 1.23
+ -- None : 0.00
+ -- left : 0.00
+
+["right", {"light": "red", "oncoming": null, "right": null, "left": null}, 24]
+ -- forward : 0.00
+ -- right : 1.31
+ -- None : 0.00
+ -- left : 0.00
+
+["forward", {"light": "red", "oncoming": null, "right": null, "left": "left"}, 20]
+ -- forward : 0.00
+ -- right : 0.00
+ -- None : 0.00
+ -- left : 0.00
+
+["right", {"light": "green", "oncoming": null, "right": "forward", "left": "left"}, 2]
+ -- forward : 0.00
+ -- right : 0.00
+ -- None : 0.00
+ -- left : 0.01
+
+["left", {"light": "green", "oncoming": "left", "right": null, "left": null}, 11]
+ -- forward : 0.00
+ -- right : 0.00
+ -- None : 0.00
+ -- left : 0.00
+
+["forward", {"light": "red", "oncoming": "forward", "right": null, "left": null}, 28]
+ -- forward : 0.00
+ -- right : 0.00
+ -- None : 0.00
+ -- left : -5.44
+
+["forward", {"light": "red", "oncoming": "left", "right": "forward", "left": "forward"}, 5]
+ -- forward : 0.00
+ -- right : 0.00
+ -- None : 0.00
+ -- left : -23.49
+
+["left", {"light": "red", "oncoming": "forward", "right": null, "left": null}, 16]
+ -- forward : -5.80
+ -- right : 0.00
+ -- None : 0.00
+ -- left : -5.74
+
+["left", {"light": "red", "oncoming": null, "right": null, "left": null}, 21]
+ -- forward : 0.00
+ -- right : 0.00
+ -- None : 0.00
+ -- left : -6.16
+
+["forward", {"light": "green", "oncoming": "forward", "right": null, "left": null}, 2]
+ -- forward : 0.00
+ -- right : 0.00
+ -- None : 0.00
+ -- left : -11.98
+
+["right", {"light": "red", "oncoming": null, "right": "forward", "left": "forward"}, 15]
+ -- forward : 0.00
+ -- right : 0.00
+ -- None : 0.00
+ -- left : -23.63
+
+["right", {"light": "red", "oncoming": null, "right": "forward", "left": null}, 5]
+ -- forward : -24.16
+ -- right : 0.00
+ -- None : 0.00
+ -- left : 0.00
+
+["left", {"light": "red", "oncoming": "left", "right": null, "left": null}, 22]
+ -- forward : 0.00
+ -- right : 0.00
+ -- None : 0.00
+ -- left : 0.00
+
+["right", {"light": "red", "oncoming": "right", "right": null, "left": null}, 19]
+ -- forward : 0.00
+ -- right : 0.00
+ -- None : 0.00
+ -- left : 0.00
+
+["forward", {"light": "red", "oncoming": null, "right": null, "left": "forward"}, 6]
+ -- forward : -24.05
+ -- right : 0.00
+ -- None : 0.00
+ -- left : 0.00
+
+["right", {"light": "red", "oncoming": null, "right": "left", "left": null}, 8]
+ -- forward : 0.00
+ -- right : 0.00
+ -- None : 1.13
+ -- left : -6.12
+
+["forward", {"light": "green", "oncoming": "right", "right": null, "left": null}, 1]
+ -- forward : 0.00
+ -- right : 0.00
+ -- None : 0.00
+ -- left : -11.56
+
+["left", {"light": "green", "oncoming": "left", "right": "left", "left": "right"}, 20]
+ -- forward : 0.00
+ -- right : 0.00
+ -- None : 0.00
+ -- left : 1.12
+
+["left", {"light": "red", "oncoming": "forward", "right": null, "left": null}, 2]
+ -- forward : 0.00
+ -- right : 0.00
+ -- None : 0.00
+ -- left : -5.50
+
+["forward", {"light": "red", "oncoming": null, "right": null, "left": null}, 24]
+ -- forward : 0.00
+ -- right : 0.00
+ -- None : 0.00
+ -- left : -6.19
+
+["right", {"light": "red", "oncoming": null, "right": "left", "left": null}, 1]
+ -- forward : 0.00
+ -- right : 0.00
+ -- None : 0.00
+ -- left : 0.00
+
+["forward", {"light": "green", "oncoming": null, "right": null, "left": null}, 22]
+ -- forward : 0.00
+ -- right : 0.00
+ -- None : 0.00
+ -- left : 0.00
+
+["right", {"light": "green", "oncoming": null, "right": "forward", "left": "forward"}, 29]
+ -- forward : 0.00
+ -- right : 0.00
+ -- None : 0.00
+ -- left : 0.00
+
+["right", {"light": "green", "oncoming": "left", "right": null, "left": null}, 13]
+ -- forward : 0.00
+ -- right : 0.00
+ -- None : 0.00
+ -- left : 1.06
+
+["left", {"light": "red", "oncoming": null, "right": "forward", "left": "left"}, 12]
+ -- forward : 0.00
+ -- right : 0.00
+ -- None : 0.00
+ -- left : -23.66
+
+["right", {"light": "red", "oncoming": null, "right": "forward", "left": null}, 16]
+ -- forward : 0.00
+ -- right : 0.00
+ -- None : 0.00
+ -- left : -24.37
+
+["forward", {"light": "green", "oncoming": null, "right": null, "left": "left"}, 2]
+ -- forward : 0.00
+ -- right : 0.00
+ -- None : 0.00
+ -- left : 0.00
+
+["forward", {"light": "red", "oncoming": null, "right": "left", "left": null}, 27]
+ -- forward : 0.00
+ -- right : 0.00
+ -- None : 0.00
+ -- left : 0.00
+
+["right", {"light": "red", "oncoming": "forward", "right": null, "left": null}, 22]
+ -- forward : 0.00
+ -- right : 0.00
+ -- None : 0.00
+ -- left : 0.00
+
+["forward", {"light": "red", "oncoming": "forward", "right": null, "left": "forward"}, 25]
+ -- forward : 0.00
+ -- right : 0.00
+ -- None : 0.00
+ -- left : 0.00
+
+["right", {"light": "green", "oncoming": "forward", "right": null, "left": null}, 16]
+ -- forward : 0.99
+ -- right : 0.00
+ -- None : 0.00
+ -- left : 0.00
+
+["right", {"light": "green", "oncoming": null, "right": null, "left": null}, 10]
+ -- forward : 0.00
+ -- right : 0.00
+ -- None : -3.30
+ -- left : -0.15
+
+["left", {"light": "green", "oncoming": null, "right": null, "left": null}, 20]
+ -- forward : 0.00
+ -- right : 0.00
+ -- None : 0.00
+ -- left : 0.95
+
+["right", {"light": "red", "oncoming": null, "right": null, "left": null}, 14]
+ -- forward : 0.00
+ -- right : 0.00
+ -- None : 1.60
+ -- left : -5.83
+
+["left", {"light": "green", "oncoming": "left", "right": "left", "left": null}, 9]
+ -- forward : 0.00
+ -- right : 0.00
+ -- None : 0.00
+ -- left : 0.58
+
+["right", {"light": "green", "oncoming": null, "right": null, "left": null}, 26]
+ -- forward : 0.00
+ -- right : 0.00
+ -- None : 0.00
+ -- left : 0.50
+
+["left", {"light": "green", "oncoming": "left", "right": "right", "left": "left"}, 14]
+ -- forward : 0.00
+ -- right : 0.00
+ -- None : 0.00
+ -- left : 0.79
+
+["right", {"light": "red", "oncoming": null, "right": "left", "left": null}, 14]
+ -- forward : -6.36
+ -- right : 0.00
+ -- None : 0.00
+ -- left : 0.00
+
+["right", {"light": "green", "oncoming": null, "right": null, "left": null}, 16]
+ -- forward : 0.00
+ -- right : 1.28
+ -- None : 0.00
+ -- left : 0.00
+
+["left", {"light": "red", "oncoming": "left", "right": null, "left": "right"}, 11]
+ -- forward : 0.00
+ -- right : 0.00
+ -- None : 0.00
+ -- left : -6.21
+
+["right", {"light": "red", "oncoming": null, "right": null, "left": "right"}, 23]
+ -- forward : 0.00
+ -- right : 0.00
+ -- None : 0.00
+ -- left : 0.00
+
+["right", {"light": "red", "oncoming": null, "right": "left", "left": "left"}, 2]
+ -- forward : 0.00
+ -- right : 0.00
+ -- None : 0.00
+ -- left : 0.00
+
+["right", {"light": "red", "oncoming": "left", "right": "right", "left": null}, 19]
+ -- forward : 0.00
+ -- right : 0.00
+ -- None : 0.00
+ -- left : -5.95
+
+["left", {"light": "red", "oncoming": "left", "right": null, "left": "left"}, 6]
+ -- forward : 0.00
+ -- right : 0.00
+ -- None : 0.00
+ -- left : 0.00
+
+["right", {"light": "green", "oncoming": "right", "right": null, "left": null}, 10]
+ -- forward : 0.00
+ -- right : 0.00
+ -- None : 0.00
+ -- left : -12.08
+
+["left", {"light": "green", "oncoming": null, "right": "left", "left": "left"}, 8]
+ -- forward : 0.00
+ -- right : 0.00
+ -- None : 0.00
+ -- left : 1.44
+
+["left", {"light": "green", "oncoming": "left", "right": "right", "left": "left"}, 17]
+ -- forward : 0.00
+ -- right : 0.00
+ -- None : -0.04
+ -- left : 0.00
+
+["forward", {"light": "green", "oncoming": null, "right": null, "left": null}, 27]
+ -- forward : 0.00
+ -- right : 0.00
+ -- None : 0.00
+ -- left : 1.11
+
+["right", {"light": "green", "oncoming": null, "right": "left", "left": null}, 28]
+ -- forward : 0.00
+ -- right : 0.00
+ -- None : 0.00
+ -- left : 0.00
+
+["forward", {"light": "green", "oncoming": null, "right": "right", "left": null}, 13]
+ -- forward : 0.00
+ -- right : 0.00
+ -- None : 0.00
+ -- left : 0.47
+
+["right", {"light": "red", "oncoming": "forward", "right": "left", "left": null}, 27]
+ -- forward : 0.00
+ -- right : 0.00
+ -- None : 0.00
+ -- left : -6.09
+
+["left", {"light": "red", "oncoming": null, "right": null, "left": null}, 13]
+ -- forward : 0.00
+ -- right : 0.00
+ -- None : 0.00
+ -- left : 0.00
+
+["forward", {"light": "green", "oncoming": null, "right": null, "left": "left"}, 27]
+ -- forward : 0.00
+ -- right : 0.00
+ -- None : 0.00
+ -- left : 1.00
+
+["right", {"light": "red", "oncoming": "left", "right": null, "left": null}, 7]
+ -- forward : 0.00
+ -- right : 0.00
+ -- None : 0.00
+ -- left : -5.67
+
+["right", {"light": "green", "oncoming": null, "right": null, "left": null}, 24]
+ -- forward : 0.00
+ -- right : 0.00
+ -- None : 0.00
+ -- left : 0.48
+
+["left", {"light": "red", "oncoming": "left", "right": null, "left": null}, 6]
+ -- forward : 0.00
+ -- right : 0.00
+ -- None : 0.00
+ -- left : -5.89
+
+["left", {"light": "red", "oncoming": "left", "right": null, "left": null}, 12]
+ -- forward : 0.00
+ -- right : 0.00
+ -- None : 1.66
+ -- left : 0.00
+
+["right", {"light": "red", "oncoming": "left", "right": null, "left": null}, 21]
+ -- forward : 0.00
+ -- right : 0.68
+ -- None : 0.00
+ -- left : 0.00
+
+["left", {"light": "green", "oncoming": null, "right": null, "left": null}, 14]
+ -- forward : 0.43
+ -- right : 0.79
+ -- None : 0.00
+ -- left : 0.00
+
+["right", {"light": "red", "oncoming": null, "right": null, "left": "forward"}, 20]
+ -- forward : 0.00
+ -- right : 0.00
+ -- None : 0.00
+ -- left : 0.00
+
+["right", {"light": "red", "oncoming": "left", "right": null, "left": null}, 18]
+ -- forward : 0.00
+ -- right : 1.66
+ -- None : 0.00
+ -- left : 0.00
+
+["forward", {"light": "red", "oncoming": null, "right": "left", "left": "forward"}, 13]
+ -- forward : 0.00
+ -- right : 0.00
+ -- None : 0.00
+ -- left : -23.64
+
+["right", {"light": "red", "oncoming": null, "right": null, "left": "forward"}, 16]
+ -- forward : 0.00
+ -- right : 0.00
+ -- None : 0.00
+ -- left : 0.00
+
+["left", {"light": "red", "oncoming": "left", "right": null, "left": "left"}, 10]
+ -- forward : -6.20
+ -- right : 0.00
+ -- None : 0.00
+ -- left : 0.00
+
+["right", {"light": "red", "oncoming": null, "right": "left", "left": null}, 16]
+ -- forward : 0.00
+ -- right : 0.00
+ -- None : 0.00
+ -- left : 0.00
+
+["forward", {"light": "red", "oncoming": "forward", "right": null, "left": null}, 27]
+ -- forward : 0.00
+ -- right : 0.00
+ -- None : 0.00
+ -- left : -6.04
+
+["forward", {"light": "red", "oncoming": null, "right": "forward", "left": "forward"}, 26]
+ -- forward : 0.00
+ -- right : 0.00
+ -- None : 0.00
+ -- left : -23.69
+
+["right", {"light": "green", "oncoming": "left", "right": null, "left": "forward"}, 2]
+ -- forward : 0.28
+ -- right : 0.00
+ -- None : 0.00
+ -- left : 0.00
+
+["forward", {"light": "red", "oncoming": null, "right": null, "left": "left"}, 14]
+ -- forward : 0.00
+ -- right : 0.00
+ -- None : 0.00
+ -- left : -5.57
+
+["forward", {"light": "red", "oncoming": null, "right": null, "left": "forward"}, 15]
+ -- forward : -24.60
+ -- right : 0.00
+ -- None : 0.00
+ -- left : 0.00
+
+["forward", {"light": "red", "oncoming": "left", "right": null, "left": null}, 13]
+ -- forward : -6.32
+ -- right : 0.00
+ -- None : 0.00
+ -- left : 0.00
+
+["forward", {"light": "red", "oncoming": null, "right": null, "left": "left"}, 1]
+ -- forward : 0.00
+ -- right : 0.00
+ -- None : 0.00
+ -- left : -6.03
+
+["left", {"light": "red", "oncoming": "left", "right": null, "left": null}, 17]
+ -- forward : 0.00
+ -- right : 0.10
+ -- None : 0.00
+ -- left : 0.00
+
+["left", {"light": "red", "oncoming": "left", "right": null, "left": null}, 24]
+ -- forward : 0.00
+ -- right : 0.00
+ -- None : 0.00
+ -- left : 0.00
+
+["right", {"light": "green", "oncoming": null, "right": "forward", "left": null}, 3]
+ -- forward : 0.00
+ -- right : 0.00
+ -- None : 0.00
+ -- left : -0.29
+
+["forward", {"light": "green", "oncoming": null, "right": "forward", "left": "forward"}, 16]
+ -- forward : 0.00
+ -- right : 0.00
+ -- None : 0.00
+ -- left : 0.00
+
+["forward", {"light": "red", "oncoming": null, "right": "right", "left": null}, 26]
+ -- forward : 0.00
+ -- right : 0.00
+ -- None : 0.00
+ -- left : 0.00
+
+["right", {"light": "red", "oncoming": "left", "right": null, "left": null}, 9]
+ -- forward : 0.00
+ -- right : 0.00
+ -- None : 0.00
+ -- left : -5.73
+
+["forward", {"light": "red", "oncoming": "forward", "right": "forward", "left": null}, 24]
+ -- forward : 0.00
+ -- right : 0.00
+ -- None : 0.00
+ -- left : 0.00
+
+["right", {"light": "green", "oncoming": "forward", "right": null, "left": null}, 30]
+ -- forward : 0.00
+ -- right : 0.00
+ -- None : 0.00
+ -- left : -12.20
+
+["forward", {"light": "red", "oncoming": null, "right": null, "left": null}, 19]
+ -- forward : 0.00
+ -- right : 0.42
+ -- None : 1.11
+ -- left : 0.00
+
+["forward", {"light": "red", "oncoming": null, "right": null, "left": "forward"}, 12]
+ -- forward : 0.00
+ -- right : 0.00
+ -- None : 1.17
+ -- left : 0.00
+
+["right", {"light": "green", "oncoming": "left", "right": null, "left": null}, 9]
+ -- forward : 0.00
+ -- right : 0.00
+ -- None : 0.00
+ -- left : 0.00
+
+["left", {"light": "green", "oncoming": null, "right": null, "left": null}, 4]
+ -- forward : 0.00
+ -- right : -0.37
+ -- None : 0.00
+ -- left : 1.17
+
+["forward", {"light": "green", "oncoming": null, "right": null, "left": "right"}, 24]
+ -- forward : 0.00
+ -- right : 0.00
+ -- None : 0.00
+ -- left : 0.49
+
+["forward", {"light": "red", "oncoming": "left", "right": "left", "left": null}, 7]
+ -- forward : 0.00
+ -- right : 0.00
+ -- None : 0.00
+ -- left : 0.00
+
+["forward", {"light": "red", "oncoming": null, "right": "forward", "left": "right"}, 2]
+ -- forward : 0.00
+ -- right : 0.00
+ -- None : 0.00
+ -- left : -23.83
+
+["right", {"light": "red", "oncoming": null, "right": null, "left": "left"}, 17]
+ -- forward : 0.00
+ -- right : 0.00
+ -- None : 0.00
+ -- left : -6.30
+
+["forward", {"light": "green", "oncoming": "forward", "right": "right", "left": null}, 20]
+ -- forward : 0.00
+ -- right : 0.00
+ -- None : 0.00
+ -- left : -12.30
+
+["forward", {"light": "red", "oncoming": "left", "right": null, "left": "right"}, 28]
+ -- forward : 0.00
+ -- right : 0.00
+ -- None : 0.00
+ -- left : 0.00
+
+["left", {"light": "green", "oncoming": "right", "right": null, "left": null}, 13]
+ -- forward : 0.00
+ -- right : 0.00
+ -- None : 0.00
+ -- left : -11.61
+
+["forward", {"light": "red", "oncoming": null, "right": "right", "left": "left"}, 19]
+ -- forward : 0.00
+ -- right : 0.00
+ -- None : 0.00
+ -- left : 0.00
+
+["forward", {"light": "green", "oncoming": null, "right": null, "left": "forward"}, 5]
+ -- forward : 0.00
+ -- right : 0.00
+ -- None : 0.00
+ -- left : 0.18
+
+["right", {"light": "red", "oncoming": "left", "right": null, "left": "left"}, 22]
+ -- forward : 0.00
+ -- right : 0.00
+ -- None : 1.51
+ -- left : 0.00
+
+["forward", {"light": "red", "oncoming": null, "right": "left", "left": "right"}, 28]
+ -- forward : 0.00
+ -- right : 0.00
+ -- None : 0.00
+ -- left : 0.00
+
+["left", {"light": "red", "oncoming": "left", "right": "right", "left": "right"}, 1]
+ -- forward : 0.00
+ -- right : 0.00
+ -- None : 0.00
+ -- left : -5.97
+
+["right", {"light": "green", "oncoming": null, "right": "left", "left": null}, 11]
+ -- forward : 0.00
+ -- right : 0.00
+ -- None : 0.00
+ -- left : 0.06
+
+["forward", {"light": "green", "oncoming": null, "right": "forward", "left": "forward"}, 5]
+ -- forward : 0.93
+ -- right : 0.00
+ -- None : 0.00
+ -- left : 0.00
+
+["right", {"light": "green", "oncoming": null, "right": null, "left": "forward"}, 1]
+ -- forward : 0.00
+ -- right : 0.00
+ -- None : -3.10
+ -- left : 0.00
+
+["forward", {"light": "green", "oncoming": "left", "right": null, "left": null}, 8]
+ -- forward : 0.00
+ -- right : 0.00
+ -- None : 0.00
+ -- left : 0.00
+
+["left", {"light": "red", "oncoming": "right", "right": null, "left": null}, 11]
+ -- forward : 0.00
+ -- right : 0.00
+ -- None : 0.00
+ -- left : 0.00
+
+["right", {"light": "green", "oncoming": "forward", "right": "forward", "left": null}, 14]
+ -- forward : 0.00
+ -- right : 0.00
+ -- None : 0.00
+ -- left : 0.00
+
+["forward", {"light": "green", "oncoming": null, "right": null, "left": null}, 14]
+ -- forward : 0.00
+ -- right : 0.00
+ -- None : 0.00
+ -- left : 0.25
+
+["right", {"light": "green", "oncoming": null, "right": "forward", "left": "right"}, 15]
+ -- forward : 0.00
+ -- right : 0.00
+ -- None : 0.00
+ -- left : 0.17
+
+["left", {"light": "green", "oncoming": "left", "right": null, "left": "forward"}, 9]
+ -- forward : 0.07
+ -- right : 0.00
+ -- None : 0.00
+ -- left : 0.00
+
+["left", {"light": "red", "oncoming": "forward", "right": null, "left": null}, 6]
+ -- forward : -5.52
+ -- right : 0.00
+ -- None : 0.00
+ -- left : -6.34
+
+["forward", {"light": "green", "oncoming": "left", "right": "left", "left": "right"}, 7]
+ -- forward : 0.00
+ -- right : 0.00
+ -- None : 0.00
+ -- left : 0.87
+
+["left", {"light": "red", "oncoming": null, "right": null, "left": "right"}, 24]
+ -- forward : 0.00
+ -- right : 0.00
+ -- None : 0.00
+ -- left : -5.58
+
+["right", {"light": "green", "oncoming": null, "right": null, "left": null}, 25]
+ -- forward : 0.00
+ -- right : 0.00
+ -- None : 0.00
+ -- left : 0.00
+
+["right", {"light": "green", "oncoming": "right", "right": null, "left": "forward"}, 2]
+ -- forward : 0.00
+ -- right : 0.00
+ -- None : 0.00
+ -- left : 0.00
+
+["left", {"light": "green", "oncoming": "forward", "right": null, "left": null}, 5]
+ -- forward : 0.00
+ -- right : 0.00
+ -- None : 0.00
+ -- left : -12.36
+
+["right", {"light": "red", "oncoming": null, "right": null, "left": null}, 10]
+ -- forward : 0.00
+ -- right : 0.00
+ -- None : 0.00
+ -- left : -5.41
+
+["right", {"light": "green", "oncoming": "forward", "right": null, "left": null}, 12]
+ -- forward : 0.00
+ -- right : 0.00
+ -- None : 0.00
+ -- left : -11.70
+
+["forward", {"light": "red", "oncoming": "left", "right": null, "left": null}, 24]
+ -- forward : 0.00
+ -- right : 0.00
+ -- None : 0.00
+ -- left : -6.54
+
+["right", {"light": "red", "oncoming": "left", "right": null, "left": null}, 14]
+ -- forward : -6.17
+ -- right : 0.00
+ -- None : 0.00
+ -- left : 0.00
+
+["right", {"light": "green", "oncoming": null, "right": null, "left": null}, 22]
+ -- forward : 0.00
+ -- right : 0.00
+ -- None : 0.00
+ -- left : 0.59
+
+["right", {"light": "red", "oncoming": "forward", "right": null, "left": "left"}, 7]
+ -- forward : 0.00
+ -- right : 1.04
+ -- None : 0.00
+ -- left : 0.00
+
+["right", {"light": "red", "oncoming": null, "right": "left", "left": null}, 5]
+ -- forward : 0.00
+ -- right : 0.00
+ -- None : 0.90
+ -- left : 0.00
+
+["right", {"light": "green", "oncoming": "left", "right": "forward", "left": null}, 13]
+ -- forward : 0.00
+ -- right : 0.00
+ -- None : 0.00
+ -- left : 0.00
+
+["forward", {"light": "green", "oncoming": null, "right": null, "left": null}, 3]
+ -- forward : 0.00
+ -- right : 0.07
+ -- None : 0.00
+ -- left : 0.00
+
+["forward", {"light": "red", "oncoming": null, "right": null, "left": null}, 6]
+ -- forward : 0.00
+ -- right : 0.00
+ -- None : 0.00
+ -- left : 0.00
+
+["forward", {"light": "red", "oncoming": null, "right": null, "left": null}, 17]
+ -- forward : 0.00
+ -- right : 0.00
+ -- None : 0.53
+ -- left : -6.26
+
+["forward", {"light": "green", "oncoming": "right", "right": "forward", "left": null}, 19]
+ -- forward : 0.00
+ -- right : 0.00
+ -- None : 0.00
+ -- left : -12.23
+
+["left", {"light": "red", "oncoming": "left", "right": "left", "left": null}, 21]
+ -- forward : 0.00
+ -- right : 0.00
+ -- None : 0.00
+ -- left : -5.49
+
+["right", {"light": "green", "oncoming": "left", "right": "left", "left": null}, 14]
+ -- forward : 0.00
+ -- right : 0.00
+ -- None : 0.00
+ -- left : 0.14
+
+["right", {"light": "red", "oncoming": "forward", "right": null, "left": null}, 18]
+ -- forward : 0.00
+ -- right : 0.00
+ -- None : 0.00
+ -- left : -6.53
+
+["left", {"light": "green", "oncoming": null, "right": null, "left": "left"}, 18]
+ -- forward : 0.00
+ -- right : 0.00
+ -- None : 0.00
+ -- left : 0.00
+
+["right", {"light": "red", "oncoming": null, "right": null, "left": null}, 6]
+ -- forward : -6.46
+ -- right : 0.00
+ -- None : 0.00
+ -- left : 0.00
+
+["left", {"light": "green", "oncoming": "right", "right": null, "left": "left"}, 12]
+ -- forward : 0.20
+ -- right : 0.00
+ -- None : 0.00
+ -- left : 0.00
+
+["forward", {"light": "red", "oncoming": "left", "right": "right", "left": null}, 10]
+ -- forward : 0.00
+ -- right : 0.00
+ -- None : 0.00
+ -- left : -6.47
+
+["forward", {"light": "green", "oncoming": "left", "right": "right", "left": null}, 13]
+ -- forward : 0.00
+ -- right : 0.00
+ -- None : 0.00
+ -- left : 0.00
+
+["left", {"light": "green", "oncoming": null, "right": null, "left": null}, 9]
+ -- forward : 0.00
+ -- right : 0.25
+ -- None : 0.00
+ -- left : 1.73
+
+["left", {"light": "red", "oncoming": null, "right": null, "left": null}, 17]
+ -- forward : 0.00
+ -- right : 0.00
+ -- None : 0.00
+ -- left : 0.00
+
+["right", {"light": "green", "oncoming": "left", "right": "left", "left": null}, 13]
+ -- forward : 0.00
+ -- right : 1.24
+ -- None : 0.00
+ -- left : 0.00
+
+["forward", {"light": "red", "oncoming": "forward", "right": null, "left": null}, 5]
+ -- forward : 0.00
+ -- right : 0.00
+ -- None : 0.00
+ -- left : -6.28
+
+["right", {"light": "red", "oncoming": "right", "right": null, "left": null}, 22]
+ -- forward : 0.00
+ -- right : 0.00
+ -- None : 0.00
+ -- left : 0.00
+
+["right", {"light": "green", "oncoming": null, "right": null, "left": null}, 13]
+ -- forward : 0.00
+ -- right : 1.61
+ -- None : 0.00
+ -- left : 0.00
+
+["left", {"light": "green", "oncoming": "left", "right": null, "left": null}, 4]
+ -- forward : 0.00
+ -- right : 0.03
+ -- None : 0.00
+ -- left : 0.55
+
+["left", {"light": "green", "oncoming": null, "right": null, "left": "right"}, 7]
+ -- forward : 0.00
+ -- right : 0.00
+ -- None : 0.00
+ -- left : 1.14
+
+["forward", {"light": "red", "oncoming": null, "right": "left", "left": "left"}, 11]
+ -- forward : 0.00
+ -- right : 0.00
+ -- None : 0.00
+ -- left : -5.95
+
+["forward", {"light": "green", "oncoming": null, "right": "left", "left": null}, 20]
+ -- forward : 0.00
+ -- right : 0.00
+ -- None : 0.00
+ -- left : 0.11
+
+["forward", {"light": "green", "oncoming": null, "right": null, "left": "right"}, 9]
+ -- forward : 1.08
+ -- right : 0.00
+ -- None : 0.00
+ -- left : 0.00
+
+["forward", {"light": "red", "oncoming": "right", "right": null, "left": null}, 25]
+ -- forward : 0.00
+ -- right : 0.00
+ -- None : 0.00
+ -- left : 0.00
+
+["left", {"light": "green", "oncoming": "forward", "right": "forward", "left": "left"}, 13]
+ -- forward : 0.00
+ -- right : 0.00
+ -- None : 0.00
+ -- left : -12.04
+
+["left", {"light": "green", "oncoming": "right", "right": null, "left": null}, 8]
+ -- forward : 0.00
+ -- right : 0.00
+ -- None : 0.00
+ -- left : -12.45
+
+["forward", {"light": "red", "oncoming": "forward", "right": "right", "left": null}, 1]
+ -- forward : 0.00
+ -- right : 0.00
+ -- None : 0.00
+ -- left : 0.00
+
+["left", {"light": "red", "oncoming": "left", "right": null, "left": null}, 13]
+ -- forward : 0.00
+ -- right : 0.00
+ -- None : 0.00
+ -- left : 0.00
+
+["right", {"light": "red", "oncoming": "left", "right": null, "left": null}, 4]
+ -- forward : 0.00
+ -- right : 0.00
+ -- None : 0.00
+ -- left : 0.00
+
+["left", {"light": "red", "oncoming": null, "right": null, "left": null}, 10]
+ -- forward : 0.00
+ -- right : 0.00
+ -- None : 0.00
+ -- left : -5.83
+
+["right", {"light": "red", "oncoming": null, "right": null, "left": "right"}, 5]
+ -- forward : 0.00
+ -- right : 0.00
+ -- None : 0.00
+ -- left : 0.00
+
+["forward", {"light": "red", "oncoming": null, "right": "right", "left": "forward"}, 10]
+ -- forward : 0.00
+ -- right : -12.27
+ -- None : 0.00
+ -- left : 0.00
+
+["left", {"light": "green", "oncoming": "left", "right": null, "left": null}, 3]
+ -- forward : 0.00
+ -- right : 0.00
+ -- None : 0.00
+ -- left : 0.00
+
+["forward", {"light": "green", "oncoming": null, "right": "forward", "left": "forward"}, 27]
+ -- forward : 0.00
+ -- right : 0.00
+ -- None : -3.04
+ -- left : 0.00
+
+["left", {"light": "green", "oncoming": null, "right": null, "left": "forward"}, 12]
+ -- forward : 0.00
+ -- right : 0.00
+ -- None : 0.00
+ -- left : 0.00
+
+["forward", {"light": "green", "oncoming": "forward", "right": null, "left": null}, 19]
+ -- forward : 0.00
+ -- right : 0.00
+ -- None : 0.00
+ -- left : -12.41
+
+["left", {"light": "green", "oncoming": "right", "right": null, "left": null}, 2]
+ -- forward : 0.00
+ -- right : 0.00
+ -- None : 0.00
+ -- left : -12.28
+
+["forward", {"light": "green", "oncoming": null, "right": null, "left": "forward"}, 16]
+ -- forward : 0.00
+ -- right : 0.00
+ -- None : 0.00
+ -- left : 1.00
+
+["left", {"light": "green", "oncoming": null, "right": null, "left": null}, 8]
+ -- forward : 0.00
+ -- right : 0.00
+ -- None : 0.00
+ -- left : 0.67
+
+["right", {"light": "red", "oncoming": null, "right": null, "left": null}, 2]
+ -- forward : 0.00
+ -- right : 0.00
+ -- None : 0.00
+ -- left : 0.00
+
+["forward", {"light": "green", "oncoming": "left", "right": "forward", "left": "left"}, 28]
+ -- forward : 0.00
+ -- right : 0.00
+ -- None : 0.00
+ -- left : 0.14
+
+["forward", {"light": "red", "oncoming": null, "right": null, "left": "forward"}, 16]
+ -- forward : 0.00
+ -- right : 0.00
+ -- None : 0.00
+ -- left : -23.91
+
+["right", {"light": "red", "oncoming": null, "right": null, "left": "right"}, 19]
+ -- forward : 0.00
+ -- right : 0.00
+ -- None : 0.00
+ -- left : 0.00
+
+["left", {"light": "red", "oncoming": "left", "right": null, "left": null}, 1]
+ -- forward : 0.00
+ -- right : 0.00
+ -- None : 0.00
+ -- left : -5.78
+
+["forward", {"light": "red", "oncoming": "left", "right": null, "left": null}, 3]
+ -- forward : 0.00
+ -- right : 0.00
+ -- None : 0.00
+ -- left : -5.86
+
+["right", {"light": "red", "oncoming": "left", "right": null, "left": null}, 17]
+ -- forward : -6.03
+ -- right : 0.00
+ -- None : 0.00
+ -- left : 0.00
+
+["left", {"light": "red", "oncoming": "left", "right": null, "left": null}, 8]
+ -- forward : 0.00
+ -- right : 0.00
+ -- None : 1.56
+ -- left : 0.00
+
+["right", {"light": "green", "oncoming": "left", "right": null, "left": null}, 5]
+ -- forward : 0.00
+ -- right : 0.00
+ -- None : 0.31
+ -- left : -0.15
+
+["left", {"light": "red", "oncoming": "left", "right": null, "left": null}, 18]
+ -- forward : 0.00
+ -- right : 0.00
+ -- None : 1.00
+ -- left : 0.00
+
+["right", {"light": "green", "oncoming": "left", "right": null, "left": "forward"}, 16]
+ -- forward : 0.00
+ -- right : 0.00
+ -- None : 0.06
+ -- left : 0.00
+
+["left", {"light": "green", "oncoming": null, "right": "forward", "left": "left"}, 11]
+ -- forward : 0.00
+ -- right : 0.00
+ -- None : 0.00
+ -- left : 0.76
+
+["left", {"light": "green", "oncoming": null, "right": "forward", "left": null}, 2]
+ -- forward : 0.00
+ -- right : -0.29
+ -- None : 0.00
+ -- left : 0.00
+
+["forward", {"light": "green", "oncoming": "left", "right": null, "left": null}, 25]
+ -- forward : 0.00
+ -- right : 0.00
+ -- None : 0.00
+ -- left : 0.28
+
+["forward", {"light": "red", "oncoming": "left", "right": null, "left": null}, 10]
+ -- forward : 0.00
+ -- right : 0.00
+ -- None : 0.00
+ -- left : 0.00
+
+["left", {"light": "red", "oncoming": "left", "right": "forward", "left": "forward"}, 3]
+ -- forward : 0.00
+ -- right : 0.00
+ -- None : 0.00
+ -- left : -23.65
+
+["forward", {"light": "green", "oncoming": null, "right": "left", "left": "left"}, 20]
+ -- forward : 0.00
+ -- right : 0.34
+ -- None : 0.00
+ -- left : 0.00
+
+["right", {"light": "green", "oncoming": "forward", "right": "forward", "left": "right"}, 35]
+ -- forward : 0.00
+ -- right : 0.00
+ -- None : 0.00
+ -- left : -12.54
+
+["forward", {"light": "red", "oncoming": "left", "right": null, "left": null}, 29]
+ -- forward : 0.00
+ -- right : 0.00
+ -- None : 0.00
+ -- left : 0.00
+
+["left", {"light": "red", "oncoming": "left", "right": "right", "left": "right"}, 5]
+ -- forward : 0.00
+ -- right : 0.00
+ -- None : 0.00
+ -- left : -6.41
+
+["right", {"light": "green", "oncoming": null, "right": "forward", "left": null}, 4]
+ -- forward : 0.00
+ -- right : 0.00
+ -- None : 0.00
+ -- left : -0.48
+
+["right", {"light": "green", "oncoming": null, "right": null, "left": null}, 29]
+ -- forward : 0.00
+ -- right : 0.00
+ -- None : 0.00
+ -- left : 0.83
+
+["left", {"light": "red", "oncoming": "right", "right": null, "left": "right"}, 29]
+ -- forward : 0.00
+ -- right : 0.06
+ -- None : 0.00
+ -- left : 0.00
+
+["left", {"light": "green", "oncoming": null, "right": null, "left": null}, 3]
+ -- forward : 0.00
+ -- right : 0.00
+ -- None : 0.00
+ -- left : 0.00
+
+["left", {"light": "green", "oncoming": null, "right": "forward", "left": "forward"}, 18]
+ -- forward : 0.00
+ -- right : 0.00
+ -- None : 0.00
+ -- left : 1.60
+
+["forward", {"light": "green", "oncoming": null, "right": null, "left": null}, 8]
+ -- forward : 0.00
+ -- right : 0.00
+ -- None : 0.00
+ -- left : 0.54
+
+["right", {"light": "red", "oncoming": null, "right": null, "left": null}, 25]
+ -- forward : 0.00
+ -- right : 0.00
+ -- None : 0.00
+ -- left : 0.00
+
+["right", {"light": "red", "oncoming": "left", "right": "left", "left": null}, 3]
+ -- forward : 0.00
+ -- right : 0.00
+ -- None : 0.00
+ -- left : 0.00
+
+["forward", {"light": "green", "oncoming": null, "right": "left", "left": null}, 15]
+ -- forward : 0.00
+ -- right : 0.00
+ -- None : 0.00
+ -- left : 0.00
+
+["left", {"light": "green", "oncoming": null, "right": null, "left": "right"}, 8]
+ -- forward : -0.04
+ -- right : 0.00
+ -- None : 0.00
+ -- left : 0.57
+
+["forward", {"light": "green", "oncoming": null, "right": null, "left": null}, 7]
+ -- forward : 0.00
+ -- right : 0.00
+ -- None : -3.27
+ -- left : 0.00
+
+["right", {"light": "green", "oncoming": "right", "right": "forward", "left": "left"}, 13]
+ -- forward : 0.00
+ -- right : 0.00
+ -- None : 0.00
+ -- left : 0.00
+
+["left", {"light": "red", "oncoming": "left", "right": "forward", "left": "forward"}, 25]
+ -- forward : 0.00
+ -- right : 0.00
+ -- None : 0.00
+ -- left : 0.00
+
+["right", {"light": "green", "oncoming": null, "right": "forward", "left": null}, 34]
+ -- forward : 0.00
+ -- right : 0.00
+ -- None : 0.00
+ -- left : 1.10
+
+["right", {"light": "red", "oncoming": null, "right": "right", "left": null}, 19]
+ -- forward : 0.00
+ -- right : 0.00
+ -- None : 0.00
+ -- left : 0.00
+
+["forward", {"light": "green", "oncoming": "left", "right": null, "left": "right"}, 7]
+ -- forward : 0.00
+ -- right : 0.00
+ -- None : 0.00
+ -- left : 0.00
+
+["right", {"light": "green", "oncoming": "left", "right": null, "left": null}, 18]
+ -- forward : 0.00
+ -- right : 0.00
+ -- None : 0.00
+ -- left : 1.13
+
+["right", {"light": "green", "oncoming": "right", "right": "forward", "left": null}, 26]
+ -- forward : 0.00
+ -- right : 0.00
+ -- None : 0.00
+ -- left : -12.04
+
+["forward", {"light": "green", "oncoming": "left", "right": null, "left": null}, 13]
+ -- forward : 0.00
+ -- right : 0.00
+ -- None : 0.00
+ -- left : -0.11
+
+["right", {"light": "red", "oncoming": null, "right": "forward", "left": null}, 20]
+ -- forward : 0.00
+ -- right : 0.00
+ -- None : 0.68
+ -- left : 0.00
+
+["right", {"light": "red", "oncoming": "forward", "right": "forward", "left": null}, 13]
+ -- forward : 0.00
+ -- right : 0.00
+ -- None : 0.00
+ -- left : -24.35
+
+["forward", {"light": "green", "oncoming": null, "right": null, "left": null}, 21]
+ -- forward : 0.00
+ -- right : 0.00
+ -- None : 0.00
+ -- left : 0.94
+
+["forward", {"light": "red", "oncoming": "forward", "right": "forward", "left": null}, 2]
+ -- forward : 0.00
+ -- right : 0.00
+ -- None : 0.00
+ -- left : 0.00
+
+["right", {"light": "red", "oncoming": null, "right": "left", "left": null}, 6]
+ -- forward : -6.06
+ -- right : 0.00
+ -- None : 0.00
+ -- left : 0.00
+
+["forward", {"light": "green", "oncoming": "left", "right": "left", "left": null}, 16]
+ -- forward : 0.00
+ -- right : 0.00
+ -- None : 0.00
+ -- left : 0.00
+
+["right", {"light": "green", "oncoming": "left", "right": null, "left": null}, 12]
+ -- forward : 0.00
+ -- right : 0.00
+ -- None : 0.00
+ -- left : 0.24
+
+["forward", {"light": "green", "oncoming": "left", "right": null, "left": null}, 6]
+ -- forward : 0.00
+ -- right : 0.00
+ -- None : 0.00
+ -- left : 0.00
+
+["forward", {"light": "red", "oncoming": "forward", "right": null, "left": null}, 16]
+ -- forward : 0.00
+ -- right : 0.00
+ -- None : 0.00
+ -- left : 0.00
+
+["right", {"light": "green", "oncoming": null, "right": null, "left": null}, 18]
+ -- forward : 0.00
+ -- right : 0.00
+ -- None : 0.00
+ -- left : 0.02
+

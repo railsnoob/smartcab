@@ -1,0 +1,2170 @@
+/-----------------------------------------
+| State-action rewards from Q-Learning
+\-----------------------------------------
+
+["forward", {"light": "green", "oncoming": "forward", "right": "forward", "left": "right"}]
+ -- forward : 0.00
+ -- right : 0.04
+ -- None : -3.74
+ -- left : -13.41
+
+["right", {"light": "red", "oncoming": "forward", "right": null, "left": "right"}]
+ -- forward : -7.66
+ -- right : 2.46
+ -- None : 0.97
+ -- left : -9.87
+
+["left", {"light": "red", "oncoming": null, "right": "left", "left": null}]
+ -- forward : -9.38
+ -- right : 1.51
+ -- None : 1.30
+ -- left : -9.31
+
+["forward", {"light": "red", "oncoming": null, "right": "forward", "left": "forward"}]
+ -- forward : -39.72
+ -- right : -20.58
+ -- None : 1.80
+ -- left : -39.57
+
+["right", {"light": "green", "oncoming": null, "right": "right", "left": "forward"}]
+ -- forward : 0.00
+ -- right : 1.07
+ -- None : -3.29
+ -- left : 0.00
+
+["right", {"light": "green", "oncoming": "left", "right": "left", "left": "right"}]
+ -- forward : 0.00
+ -- right : 1.90
+ -- None : 0.00
+ -- left : 0.00
+
+["left", {"light": "green", "oncoming": "right", "right": null, "left": "right"}]
+ -- forward : 0.00
+ -- right : -0.05
+ -- None : -3.62
+ -- left : -13.90
+
+["right", {"light": "green", "oncoming": null, "right": null, "left": "forward"}]
+ -- forward : 0.53
+ -- right : 2.52
+ -- None : -4.67
+ -- left : 0.76
+
+["left", {"light": "red", "oncoming": "forward", "right": "right", "left": null}]
+ -- forward : 0.00
+ -- right : 0.83
+ -- None : 1.68
+ -- left : -9.21
+
+["left", {"light": "green", "oncoming": "right", "right": null, "left": null}]
+ -- forward : 0.22
+ -- right : 0.24
+ -- None : -4.93
+ -- left : -20.55
+
+["right", {"light": "red", "oncoming": "forward", "right": "left", "left": null}]
+ -- forward : -10.40
+ -- right : 2.37
+ -- None : 1.74
+ -- left : -9.65
+
+["right", {"light": "green", "oncoming": "left", "right": null, "left": "left"}]
+ -- forward : 0.00
+ -- right : 1.75
+ -- None : -0.31
+ -- left : -0.14
+
+["right", {"light": "red", "oncoming": "forward", "right": "forward", "left": "left"}]
+ -- forward : 0.00
+ -- right : 0.00
+ -- None : 0.89
+ -- left : 0.00
+
+["left", {"light": "green", "oncoming": "forward", "right": "forward", "left": "right"}]
+ -- forward : 0.51
+ -- right : 0.63
+ -- None : 0.00
+ -- left : 0.00
+
+["forward", {"light": "red", "oncoming": null, "right": "left", "left": null}]
+ -- forward : -9.39
+ -- right : 0.99
+ -- None : 1.51
+ -- left : -10.05
+
+["right", {"light": "red", "oncoming": "left", "right": "left", "left": "forward"}]
+ -- forward : -27.93
+ -- right : -14.41
+ -- None : 1.78
+ -- left : 0.00
+
+["forward", {"light": "red", "oncoming": "forward", "right": "left", "left": "forward"}]
+ -- forward : -27.88
+ -- right : -13.72
+ -- None : 1.17
+ -- left : -27.51
+
+["forward", {"light": "red", "oncoming": "forward", "right": "right", "left": null}]
+ -- forward : 0.00
+ -- right : 0.30
+ -- None : 0.71
+ -- left : -10.44
+
+["left", {"light": "green", "oncoming": null, "right": null, "left": "forward"}]
+ -- forward : 0.75
+ -- right : 0.62
+ -- None : -4.59
+ -- left : 1.80
+
+["right", {"light": "green", "oncoming": "forward", "right": null, "left": null}]
+ -- forward : 0.10
+ -- right : 2.36
+ -- None : -4.68
+ -- left : -19.30
+
+["right", {"light": "red", "oncoming": "forward", "right": "left", "left": "right"}]
+ -- forward : -7.42
+ -- right : 1.72
+ -- None : 1.90
+ -- left : 0.00
+
+["right", {"light": "green", "oncoming": "forward", "right": "forward", "left": "forward"}]
+ -- forward : 0.97
+ -- right : 0.00
+ -- None : -3.58
+ -- left : -14.08
+
+["left", {"light": "green", "oncoming": "right", "right": "left", "left": "left"}]
+ -- forward : 1.32
+ -- right : 0.00
+ -- None : 0.00
+ -- left : 0.00
+
+["right", {"light": "green", "oncoming": "left", "right": "right", "left": "left"}]
+ -- forward : 0.00
+ -- right : 1.77
+ -- None : 0.26
+ -- left : 0.00
+
+["forward", {"light": "green", "oncoming": "left", "right": "right", "left": null}]
+ -- forward : 2.66
+ -- right : 0.96
+ -- None : 0.52
+ -- left : 0.66
+
+["forward", {"light": "green", "oncoming": null, "right": null, "left": "forward"}]
+ -- forward : 1.16
+ -- right : 1.18
+ -- None : -5.75
+ -- left : 1.33
+
+["forward", {"light": "green", "oncoming": null, "right": null, "left": "left"}]
+ -- forward : 1.91
+ -- right : 0.17
+ -- None : -5.57
+ -- left : 0.56
+
+["forward", {"light": "green", "oncoming": "left", "right": "left", "left": "left"}]
+ -- forward : 0.00
+ -- right : 0.00
+ -- None : 0.26
+ -- left : 0.30
+
+["left", {"light": "red", "oncoming": "forward", "right": "left", "left": null}]
+ -- forward : -6.32
+ -- right : 0.00
+ -- None : 1.87
+ -- left : -9.35
+
+["left", {"light": "green", "oncoming": "right", "right": null, "left": "forward"}]
+ -- forward : 0.45
+ -- right : 0.00
+ -- None : -4.36
+ -- left : -19.37
+
+["left", {"light": "green", "oncoming": "forward", "right": "left", "left": "forward"}]
+ -- forward : 0.75
+ -- right : 0.44
+ -- None : 0.00
+ -- left : 0.00
+
+["left", {"light": "red", "oncoming": "left", "right": "left", "left": "right"}]
+ -- forward : -6.54
+ -- right : 0.00
+ -- None : 1.23
+ -- left : 0.00
+
+["left", {"light": "green", "oncoming": null, "right": "forward", "left": "left"}]
+ -- forward : 1.24
+ -- right : 0.27
+ -- None : -4.19
+ -- left : 0.75
+
+["left", {"light": "red", "oncoming": null, "right": "forward", "left": null}]
+ -- forward : -39.28
+ -- right : 0.42
+ -- None : 2.23
+ -- left : -40.42
+
+["left", {"light": "red", "oncoming": "forward", "right": "forward", "left": "right"}]
+ -- forward : 0.00
+ -- right : 0.00
+ -- None : 2.10
+ -- left : 0.00
+
+["right", {"light": "red", "oncoming": "right", "right": "forward", "left": "forward"}]
+ -- forward : 0.00
+ -- right : 0.00
+ -- None : 1.93
+ -- left : 0.00
+
+["left", {"light": "green", "oncoming": null, "right": "right", "left": "left"}]
+ -- forward : 0.00
+ -- right : 1.07
+ -- None : 0.00
+ -- left : 0.00
+
+["left", {"light": "green", "oncoming": "left", "right": "forward", "left": "right"}]
+ -- forward : 0.00
+ -- right : 0.00
+ -- None : 0.00
+ -- left : 1.22
+
+["forward", {"light": "green", "oncoming": "right", "right": "forward", "left": "forward"}]
+ -- forward : 0.00
+ -- right : 0.00
+ -- None : -3.16
+ -- left : -13.72
+
+["left", {"light": "red", "oncoming": null, "right": null, "left": "right"}]
+ -- forward : -9.63
+ -- right : 1.05
+ -- None : 1.96
+ -- left : -9.37
+
+["left", {"light": "red", "oncoming": "right", "right": "forward", "left": null}]
+ -- forward : 0.00
+ -- right : 0.61
+ -- None : 2.34
+ -- left : -39.57
+
+["right", {"light": "red", "oncoming": "right", "right": "forward", "left": "right"}]
+ -- forward : 0.00
+ -- right : 0.00
+ -- None : 0.00
+ -- left : -28.54
+
+["left", {"light": "red", "oncoming": "left", "right": "right", "left": "left"}]
+ -- forward : -6.71
+ -- right : 0.02
+ -- None : 0.00
+ -- left : 0.00
+
+["left", {"light": "green", "oncoming": "left", "right": "left", "left": null}]
+ -- forward : 0.24
+ -- right : 0.86
+ -- None : 0.90
+ -- left : 1.81
+
+["forward", {"light": "green", "oncoming": "forward", "right": "left", "left": null}]
+ -- forward : 1.20
+ -- right : -0.26
+ -- None : -5.28
+ -- left : -19.65
+
+["left", {"light": "red", "oncoming": "right", "right": "left", "left": "forward"}]
+ -- forward : 0.00
+ -- right : -18.07
+ -- None : 1.28
+ -- left : -28.41
+
+["forward", {"light": "green", "oncoming": "right", "right": "right", "left": "forward"}]
+ -- forward : 0.00
+ -- right : 0.00
+ -- None : -4.19
+ -- left : -13.92
+
+["forward", {"light": "red", "oncoming": "right", "right": "left", "left": "left"}]
+ -- forward : 0.00
+ -- right : 0.00
+ -- None : 1.21
+ -- left : -28.13
+
+["left", {"light": "green", "oncoming": "forward", "right": null, "left": null}]
+ -- forward : 0.28
+ -- right : 1.18
+ -- None : -4.90
+ -- left : -19.68
+
+["left", {"light": "red", "oncoming": "right", "right": "right", "left": "forward"}]
+ -- forward : 0.00
+ -- right : 0.00
+ -- None : 0.00
+ -- left : -28.38
+
+["forward", {"light": "green", "oncoming": null, "right": "forward", "left": "left"}]
+ -- forward : 1.98
+ -- right : 0.71
+ -- None : -4.03
+ -- left : 1.25
+
+["forward", {"light": "green", "oncoming": "forward", "right": "forward", "left": "forward"}]
+ -- forward : 1.23
+ -- right : 0.17
+ -- None : -3.08
+ -- left : 0.00
+
+["forward", {"light": "green", "oncoming": "right", "right": null, "left": "right"}]
+ -- forward : 0.00
+ -- right : 0.17
+ -- None : 0.00
+ -- left : -13.36
+
+["left", {"light": "green", "oncoming": null, "right": "left", "left": null}]
+ -- forward : 0.57
+ -- right : 0.32
+ -- None : -4.30
+ -- left : 1.09
+
+["left", {"light": "green", "oncoming": null, "right": "right", "left": "forward"}]
+ -- forward : 0.13
+ -- right : 0.00
+ -- None : -3.34
+ -- left : 1.52
+
+["left", {"light": "red", "oncoming": "right", "right": "forward", "left": "right"}]
+ -- forward : 0.00
+ -- right : 0.00
+ -- None : 0.00
+ -- left : -38.80
+
+["left", {"light": "red", "oncoming": "left", "right": "right", "left": "right"}]
+ -- forward : 0.00
+ -- right : -0.22
+ -- None : 0.83
+ -- left : -7.35
+
+["forward", {"light": "red", "oncoming": "left", "right": null, "left": null}]
+ -- forward : -9.84
+ -- right : 1.12
+ -- None : 2.57
+ -- left : -10.25
+
+["right", {"light": "red", "oncoming": null, "right": "forward", "left": "left"}]
+ -- forward : -27.85
+ -- right : 1.18
+ -- None : 1.60
+ -- left : -36.27
+
+["forward", {"light": "red", "oncoming": "left", "right": "left", "left": "right"}]
+ -- forward : 0.00
+ -- right : 0.00
+ -- None : 2.62
+ -- left : -6.37
+
+["forward", {"light": "red", "oncoming": null, "right": "right", "left": "right"}]
+ -- forward : -7.12
+ -- right : 1.23
+ -- None : 0.00
+ -- left : 0.00
+
+["right", {"light": "red", "oncoming": "forward", "right": null, "left": null}]
+ -- forward : -9.54
+ -- right : 1.19
+ -- None : 1.88
+ -- left : -9.58
+
+["left", {"light": "green", "oncoming": "left", "right": null, "left": null}]
+ -- forward : 0.92
+ -- right : 0.08
+ -- None : 0.89
+ -- left : 2.44
+
+["forward", {"light": "red", "oncoming": "left", "right": "forward", "left": "forward"}]
+ -- forward : 0.00
+ -- right : 0.00
+ -- None : 0.71
+ -- left : -28.38
+
+["right", {"light": "green", "oncoming": "forward", "right": "right", "left": "left"}]
+ -- forward : 0.00
+ -- right : 1.55
+ -- None : 0.00
+ -- left : 0.00
+
+["left", {"light": "red", "oncoming": "left", "right": null, "left": "right"}]
+ -- forward : -9.14
+ -- right : 1.08
+ -- None : 1.51
+ -- left : -10.09
+
+["right", {"light": "green", "oncoming": "right", "right": "forward", "left": "left"}]
+ -- forward : 0.00
+ -- right : 0.00
+ -- None : -3.56
+ -- left : -13.42
+
+["forward", {"light": "red", "oncoming": null, "right": "right", "left": null}]
+ -- forward : -9.37
+ -- right : 0.29
+ -- None : 1.54
+ -- left : -9.68
+
+["right", {"light": "red", "oncoming": "left", "right": "right", "left": "right"}]
+ -- forward : 0.00
+ -- right : 1.02
+ -- None : 0.00
+ -- left : -6.59
+
+["left", {"light": "red", "oncoming": null, "right": null, "left": null}]
+ -- forward : -9.40
+ -- right : 0.40
+ -- None : 2.32
+ -- left : -9.70
+
+["right", {"light": "green", "oncoming": null, "right": "forward", "left": "forward"}]
+ -- forward : 1.02
+ -- right : 2.17
+ -- None : -4.81
+ -- left : 0.84
+
+["forward", {"light": "red", "oncoming": null, "right": "left", "left": "forward"}]
+ -- forward : -27.42
+ -- right : -20.30
+ -- None : 1.97
+ -- left : -40.11
+
+["right", {"light": "red", "oncoming": null, "right": "right", "left": null}]
+ -- forward : -9.86
+ -- right : 1.53
+ -- None : 1.35
+ -- left : -10.08
+
+["right", {"light": "red", "oncoming": "right", "right": "forward", "left": null}]
+ -- forward : -36.70
+ -- right : 2.19
+ -- None : 1.05
+ -- left : 0.00
+
+["left", {"light": "green", "oncoming": "right", "right": "forward", "left": "left"}]
+ -- forward : 0.00
+ -- right : 0.00
+ -- None : -3.30
+ -- left : -13.69
+
+["left", {"light": "green", "oncoming": null, "right": "right", "left": null}]
+ -- forward : 0.19
+ -- right : 1.11
+ -- None : -4.34
+ -- left : 0.99
+
+["forward", {"light": "red", "oncoming": "forward", "right": "left", "left": null}]
+ -- forward : -10.31
+ -- right : 0.64
+ -- None : 2.04
+ -- left : -9.54
+
+["right", {"light": "green", "oncoming": "left", "right": "left", "left": "left"}]
+ -- forward : 0.00
+ -- right : 0.74
+ -- None : 0.00
+ -- left : 0.19
+
+["right", {"light": "green", "oncoming": "right", "right": null, "left": "left"}]
+ -- forward : 0.00
+ -- right : 1.45
+ -- None : -3.51
+ -- left : -17.47
+
+["left", {"light": "green", "oncoming": "left", "right": "left", "left": "forward"}]
+ -- forward : 1.31
+ -- right : 0.77
+ -- None : 0.96
+ -- left : 0.00
+
+["forward", {"light": "green", "oncoming": "left", "right": null, "left": "left"}]
+ -- forward : 1.33
+ -- right : 0.69
+ -- None : 0.92
+ -- left : 0.76
+
+["right", {"light": "green", "oncoming": null, "right": null, "left": "right"}]
+ -- forward : 0.13
+ -- right : 2.08
+ -- None : -5.06
+ -- left : 1.19
+
+["forward", {"light": "green", "oncoming": null, "right": "right", "left": "right"}]
+ -- forward : 0.00
+ -- right : 0.00
+ -- None : 0.00
+ -- left : 1.05
+
+["right", {"light": "green", "oncoming": "left", "right": "forward", "left": "forward"}]
+ -- forward : 0.00
+ -- right : 1.90
+ -- None : 0.98
+ -- left : 0.00
+
+["left", {"light": "green", "oncoming": "right", "right": "right", "left": "forward"}]
+ -- forward : 1.09
+ -- right : 0.00
+ -- None : 0.00
+ -- left : 0.00
+
+["left", {"light": "green", "oncoming": null, "right": null, "left": "left"}]
+ -- forward : 0.64
+ -- right : 0.06
+ -- None : -5.29
+ -- left : 2.41
+
+["right", {"light": "red", "oncoming": "forward", "right": null, "left": "forward"}]
+ -- forward : -28.05
+ -- right : -18.90
+ -- None : 1.85
+ -- left : -28.47
+
+["right", {"light": "green", "oncoming": "left", "right": null, "left": null}]
+ -- forward : -0.05
+ -- right : 2.17
+ -- None : 0.60
+ -- left : 0.26
+
+["left", {"light": "green", "oncoming": "left", "right": null, "left": "right"}]
+ -- forward : 0.34
+ -- right : 0.49
+ -- None : 1.35
+ -- left : 2.00
+
+["left", {"light": "red", "oncoming": "forward", "right": null, "left": "right"}]
+ -- forward : -10.08
+ -- right : 1.06
+ -- None : 2.57
+ -- left : -7.11
+
+["left", {"light": "green", "oncoming": "forward", "right": "forward", "left": "left"}]
+ -- forward : 0.00
+ -- right : 1.17
+ -- None : -3.06
+ -- left : -18.78
+
+["left", {"light": "green", "oncoming": "right", "right": "left", "left": "forward"}]
+ -- forward : 0.23
+ -- right : 0.00
+ -- None : 0.00
+ -- left : 0.00
+
+["right", {"light": "red", "oncoming": null, "right": "forward", "left": null}]
+ -- forward : -39.95
+ -- right : 1.13
+ -- None : 1.35
+ -- left : -40.21
+
+["right", {"light": "red", "oncoming": "right", "right": null, "left": "left"}]
+ -- forward : -6.58
+ -- right : 1.96
+ -- None : 0.00
+ -- left : -28.16
+
+["forward", {"light": "green", "oncoming": "left", "right": "right", "left": "right"}]
+ -- forward : 1.87
+ -- right : 0.00
+ -- None : 0.00
+ -- left : 0.00
+
+["forward", {"light": "green", "oncoming": "right", "right": null, "left": "forward"}]
+ -- forward : 1.85
+ -- right : 0.00
+ -- None : 0.00
+ -- left : -13.64
+
+["right", {"light": "red", "oncoming": "right", "right": "right", "left": "left"}]
+ -- forward : 0.00
+ -- right : 0.00
+ -- None : 0.00
+ -- left : -27.56
+
+["left", {"light": "green", "oncoming": "forward", "right": "right", "left": "forward"}]
+ -- forward : 0.00
+ -- right : 0.75
+ -- None : -3.36
+ -- left : -13.97
+
+["left", {"light": "red", "oncoming": null, "right": "left", "left": "left"}]
+ -- forward : -9.67
+ -- right : 0.80
+ -- None : 1.36
+ -- left : -10.45
+
+["right", {"light": "green", "oncoming": null, "right": "right", "left": "right"}]
+ -- forward : 0.00
+ -- right : 0.00
+ -- None : -4.00
+ -- left : 0.00
+
+["left", {"light": "green", "oncoming": "forward", "right": "left", "left": "left"}]
+ -- forward : 0.00
+ -- right : 0.00
+ -- None : -2.84
+ -- left : -13.54
+
+["forward", {"light": "green", "oncoming": null, "right": "right", "left": null}]
+ -- forward : 1.40
+ -- right : 0.42
+ -- None : -4.68
+ -- left : -0.11
+
+["right", {"light": "red", "oncoming": null, "right": "left", "left": "forward"}]
+ -- forward : -39.37
+ -- right : -19.30
+ -- None : 1.19
+ -- left : -38.90
+
+["forward", {"light": "red", "oncoming": "right", "right": null, "left": "right"}]
+ -- forward : -7.27
+ -- right : 0.84
+ -- None : 0.00
+ -- left : 0.00
+
+["right", {"light": "red", "oncoming": "right", "right": null, "left": "right"}]
+ -- forward : 0.00
+ -- right : 0.00
+ -- None : 0.00
+ -- left : -28.29
+
+["forward", {"light": "green", "oncoming": "forward", "right": null, "left": "right"}]
+ -- forward : 1.73
+ -- right : -0.23
+ -- None : -5.39
+ -- left : -14.29
+
+["right", {"light": "green", "oncoming": "forward", "right": "right", "left": null}]
+ -- forward : 0.00
+ -- right : 2.40
+ -- None : 0.00
+ -- left : -14.33
+
+["left", {"light": "red", "oncoming": "forward", "right": null, "left": "forward"}]
+ -- forward : -39.73
+ -- right : 0.00
+ -- None : 1.62
+ -- left : -38.92
+
+["left", {"light": "red", "oncoming": "right", "right": null, "left": null}]
+ -- forward : -10.13
+ -- right : 0.73
+ -- None : 2.22
+ -- left : -40.19
+
+["forward", {"light": "green", "oncoming": "left", "right": null, "left": "right"}]
+ -- forward : 1.35
+ -- right : 0.42
+ -- None : 0.60
+ -- left : 0.61
+
+["right", {"light": "green", "oncoming": "left", "right": "right", "left": "right"}]
+ -- forward : 0.00
+ -- right : 0.00
+ -- None : 0.00
+ -- left : 0.92
+
+["forward", {"light": "green", "oncoming": "right", "right": "left", "left": "right"}]
+ -- forward : 0.00
+ -- right : 1.38
+ -- None : 0.00
+ -- left : 0.00
+
+["forward", {"light": "green", "oncoming": null, "right": null, "left": null}]
+ -- forward : 1.28
+ -- right : 0.85
+ -- None : -4.70
+ -- left : 0.34
+
+["forward", {"light": "green", "oncoming": "forward", "right": "left", "left": "left"}]
+ -- forward : 1.68
+ -- right : 0.00
+ -- None : -3.65
+ -- left : 0.00
+
+["forward", {"light": "red", "oncoming": "left", "right": null, "left": "left"}]
+ -- forward : -9.41
+ -- right : 0.29
+ -- None : 2.10
+ -- left : -10.21
+
+["right", {"light": "green", "oncoming": "right", "right": null, "left": null}]
+ -- forward : 0.19
+ -- right : 0.98
+ -- None : -4.48
+ -- left : -17.95
+
+["right", {"light": "red", "oncoming": null, "right": null, "left": "left"}]
+ -- forward : -10.38
+ -- right : 1.92
+ -- None : 2.21
+ -- left : -9.91
+
+["left", {"light": "red", "oncoming": null, "right": "right", "left": "right"}]
+ -- forward : -7.17
+ -- right : 0.00
+ -- None : 0.00
+ -- left : -6.31
+
+["left", {"light": "red", "oncoming": "right", "right": "right", "left": null}]
+ -- forward : 0.00
+ -- right : 0.00
+ -- None : 1.35
+ -- left : 0.00
+
+["forward", {"light": "red", "oncoming": "forward", "right": "right", "left": "left"}]
+ -- forward : 0.00
+ -- right : 0.74
+ -- None : 0.00
+ -- left : -6.41
+
+["right", {"light": "green", "oncoming": "forward", "right": "forward", "left": "left"}]
+ -- forward : 0.00
+ -- right : 1.11
+ -- None : -3.70
+ -- left : -13.36
+
+["left", {"light": "red", "oncoming": null, "right": "forward", "left": "forward"}]
+ -- forward : -28.28
+ -- right : -18.15
+ -- None : 1.25
+ -- left : -37.00
+
+["right", {"light": "red", "oncoming": "left", "right": "forward", "left": "right"}]
+ -- forward : -27.51
+ -- right : 0.00
+ -- None : 0.00
+ -- left : -28.24
+
+["forward", {"light": "red", "oncoming": "left", "right": null, "left": "forward"}]
+ -- forward : -38.99
+ -- right : -20.64
+ -- None : 1.18
+ -- left : -40.32
+
+["left", {"light": "red", "oncoming": null, "right": "forward", "left": "left"}]
+ -- forward : -27.83
+ -- right : 0.18
+ -- None : 1.93
+ -- left : -27.99
+
+["right", {"light": "green", "oncoming": "right", "right": "right", "left": "forward"}]
+ -- forward : 0.00
+ -- right : 0.00
+ -- None : 0.00
+ -- left : -14.51
+
+["right", {"light": "red", "oncoming": "right", "right": "left", "left": "left"}]
+ -- forward : 0.00
+ -- right : 0.00
+ -- None : 2.01
+ -- left : -27.65
+
+["right", {"light": "green", "oncoming": "right", "right": "forward", "left": "forward"}]
+ -- forward : 0.00
+ -- right : 0.00
+ -- None : -3.21
+ -- left : -14.00
+
+["forward", {"light": "red", "oncoming": "right", "right": "forward", "left": "forward"}]
+ -- forward : 0.00
+ -- right : 0.00
+ -- None : 0.00
+ -- left : -27.81
+
+["right", {"light": "green", "oncoming": "forward", "right": null, "left": "left"}]
+ -- forward : 0.00
+ -- right : 2.40
+ -- None : -4.69
+ -- left : -14.10
+
+["left", {"light": "red", "oncoming": "left", "right": null, "left": "forward"}]
+ -- forward : -35.69
+ -- right : -18.77
+ -- None : 1.76
+ -- left : -28.43
+
+["left", {"light": "green", "oncoming": null, "right": "forward", "left": "right"}]
+ -- forward : 0.00
+ -- right : 0.00
+ -- None : -4.61
+ -- left : 1.24
+
+["left", {"light": "red", "oncoming": "right", "right": "left", "left": "left"}]
+ -- forward : 0.00
+ -- right : 0.92
+ -- None : 0.00
+ -- left : 0.00
+
+["left", {"light": "red", "oncoming": "left", "right": "left", "left": null}]
+ -- forward : -9.89
+ -- right : 0.69
+ -- None : 2.14
+ -- left : -9.88
+
+["forward", {"light": "green", "oncoming": null, "right": "left", "left": null}]
+ -- forward : 2.75
+ -- right : 0.96
+ -- None : -4.81
+ -- left : 0.76
+
+["forward", {"light": "green", "oncoming": "left", "right": "left", "left": "forward"}]
+ -- forward : 0.00
+ -- right : 0.00
+ -- None : 0.00
+ -- left : 1.35
+
+["right", {"light": "green", "oncoming": null, "right": "left", "left": null}]
+ -- forward : 0.49
+ -- right : 1.78
+ -- None : -5.80
+ -- left : 0.33
+
+["forward", {"light": "green", "oncoming": "forward", "right": "left", "left": "forward"}]
+ -- forward : 0.00
+ -- right : 0.96
+ -- None : 0.00
+ -- left : 0.00
+
+["right", {"light": "red", "oncoming": "left", "right": "left", "left": null}]
+ -- forward : -10.15
+ -- right : 1.05
+ -- None : 2.24
+ -- left : -10.20
+
+["forward", {"light": "green", "oncoming": "right", "right": "left", "left": null}]
+ -- forward : 1.61
+ -- right : 0.00
+ -- None : 0.00
+ -- left : -13.77
+
+["right", {"light": "red", "oncoming": "left", "right": "right", "left": "forward"}]
+ -- forward : 0.00
+ -- right : -14.40
+ -- None : 0.00
+ -- left : -27.89
+
+["right", {"light": "red", "oncoming": "left", "right": "right", "left": "left"}]
+ -- forward : 0.00
+ -- right : 0.00
+ -- None : 0.47
+ -- left : -6.68
+
+["right", {"light": "green", "oncoming": "right", "right": "left", "left": "right"}]
+ -- forward : 0.12
+ -- right : 0.00
+ -- None : 0.00
+ -- left : 0.00
+
+["forward", {"light": "red", "oncoming": null, "right": "left", "left": "left"}]
+ -- forward : -6.94
+ -- right : 0.52
+ -- None : 2.10
+ -- left : -10.13
+
+["right", {"light": "green", "oncoming": "right", "right": "left", "left": "left"}]
+ -- forward : 1.59
+ -- right : 0.00
+ -- None : 0.00
+ -- left : -13.68
+
+["left", {"light": "red", "oncoming": null, "right": "right", "left": null}]
+ -- forward : -9.50
+ -- right : 0.46
+ -- None : 2.46
+ -- left : -10.42
+
+["left", {"light": "red", "oncoming": "forward", "right": "forward", "left": "forward"}]
+ -- forward : 0.00
+ -- right : -13.88
+ -- None : 2.09
+ -- left : -28.06
+
+["right", {"light": "red", "oncoming": null, "right": "forward", "left": "right"}]
+ -- forward : -36.73
+ -- right : 0.72
+ -- None : 2.60
+ -- left : 0.00
+
+["forward", {"light": "red", "oncoming": "forward", "right": "right", "left": "forward"}]
+ -- forward : -36.92
+ -- right : 0.00
+ -- None : 0.00
+ -- left : -35.70
+
+["forward", {"light": "green", "oncoming": null, "right": "right", "left": "forward"}]
+ -- forward : 2.22
+ -- right : 0.67
+ -- None : -5.36
+ -- left : 0.00
+
+["right", {"light": "green", "oncoming": null, "right": "left", "left": "forward"}]
+ -- forward : 0.50
+ -- right : 1.78
+ -- None : -3.70
+ -- left : -0.13
+
+["forward", {"light": "green", "oncoming": "forward", "right": "forward", "left": "left"}]
+ -- forward : 1.78
+ -- right : 1.16
+ -- None : 0.00
+ -- left : -14.28
+
+["right", {"light": "green", "oncoming": "left", "right": "left", "left": null}]
+ -- forward : 0.64
+ -- right : 1.73
+ -- None : 0.78
+ -- left : 1.42
+
+["right", {"light": "red", "oncoming": "forward", "right": "right", "left": "left"}]
+ -- forward : -7.57
+ -- right : 0.00
+ -- None : 2.39
+ -- left : 0.00
+
+["right", {"light": "green", "oncoming": "forward", "right": "left", "left": "right"}]
+ -- forward : 0.00
+ -- right : 0.75
+ -- None : 0.00
+ -- left : 0.00
+
+["left", {"light": "green", "oncoming": null, "right": "left", "left": "right"}]
+ -- forward : 0.70
+ -- right : 0.01
+ -- None : -5.05
+ -- left : 1.59
+
+["left", {"light": "green", "oncoming": "forward", "right": null, "left": "right"}]
+ -- forward : 0.11
+ -- right : 0.86
+ -- None : -5.43
+ -- left : -19.71
+
+["forward", {"light": "red", "oncoming": null, "right": "left", "left": "right"}]
+ -- forward : -9.57
+ -- right : 0.51
+ -- None : 1.68
+ -- left : -6.65
+
+["forward", {"light": "red", "oncoming": "right", "right": "left", "left": null}]
+ -- forward : 0.00
+ -- right : 0.18
+ -- None : 1.36
+ -- left : 0.00
+
+["forward", {"light": "green", "oncoming": "forward", "right": "right", "left": "left"}]
+ -- forward : 0.00
+ -- right : 0.69
+ -- None : 0.00
+ -- left : 0.00
+
+["left", {"light": "green", "oncoming": "left", "right": null, "left": "left"}]
+ -- forward : 0.42
+ -- right : 1.09
+ -- None : 0.06
+ -- left : 1.86
+
+["right", {"light": "green", "oncoming": "left", "right": "forward", "left": null}]
+ -- forward : -0.06
+ -- right : 1.92
+ -- None : 0.00
+ -- left : 0.68
+
+["forward", {"light": "green", "oncoming": "right", "right": "right", "left": null}]
+ -- forward : 0.00
+ -- right : 0.00
+ -- None : 0.00
+ -- left : -17.46
+
+["left", {"light": "red", "oncoming": "left", "right": "left", "left": "forward"}]
+ -- forward : -36.70
+ -- right : 0.00
+ -- None : 2.55
+ -- left : -27.77
+
+["forward", {"light": "red", "oncoming": "right", "right": "left", "left": "forward"}]
+ -- forward : 0.00
+ -- right : 0.00
+ -- None : 1.22
+ -- left : -27.64
+
+["right", {"light": "green", "oncoming": "right", "right": null, "left": "right"}]
+ -- forward : 0.00
+ -- right : 0.00
+ -- None : -3.07
+ -- left : -14.13
+
+["left", {"light": "green", "oncoming": "forward", "right": "right", "left": "right"}]
+ -- forward : 0.00
+ -- right : 0.00
+ -- None : -3.89
+ -- left : -14.20
+
+["right", {"light": "green", "oncoming": "forward", "right": "left", "left": "forward"}]
+ -- forward : 0.60
+ -- right : 0.00
+ -- None : -2.81
+ -- left : 0.00
+
+["forward", {"light": "red", "oncoming": "left", "right": null, "left": "right"}]
+ -- forward : -9.48
+ -- right : 1.14
+ -- None : 2.12
+ -- left : -9.10
+
+["forward", {"light": "red", "oncoming": "right", "right": null, "left": "left"}]
+ -- forward : -6.83
+ -- right : 0.93
+ -- None : 2.54
+ -- left : -28.55
+
+["left", {"light": "green", "oncoming": "left", "right": "left", "left": "right"}]
+ -- forward : 0.00
+ -- right : 0.67
+ -- None : 0.00
+ -- left : 2.01
+
+["right", {"light": "green", "oncoming": "left", "right": "forward", "left": "left"}]
+ -- forward : 0.00
+ -- right : 0.00
+ -- None : 0.00
+ -- left : 1.52
+
+["forward", {"light": "green", "oncoming": "right", "right": "forward", "left": "right"}]
+ -- forward : 0.73
+ -- right : 0.00
+ -- None : 0.00
+ -- left : 0.00
+
+["forward", {"light": "green", "oncoming": "left", "right": "forward", "left": "right"}]
+ -- forward : 1.38
+ -- right : -0.36
+ -- None : 0.00
+ -- left : 0.00
+
+["right", {"light": "green", "oncoming": "forward", "right": "left", "left": "left"}]
+ -- forward : 0.00
+ -- right : 0.00
+ -- None : -4.12
+ -- left : -14.18
+
+["right", {"light": "red", "oncoming": "right", "right": "right", "left": null}]
+ -- forward : 0.00
+ -- right : 0.00
+ -- None : 0.80
+ -- left : 0.00
+
+["right", {"light": "red", "oncoming": "forward", "right": "forward", "left": null}]
+ -- forward : -38.30
+ -- right : 0.76
+ -- None : 2.11
+ -- left : -40.42
+
+["forward", {"light": "red", "oncoming": "forward", "right": "forward", "left": "left"}]
+ -- forward : -36.17
+ -- right : 0.37
+ -- None : 1.51
+ -- left : -27.92
+
+["right", {"light": "red", "oncoming": null, "right": null, "left": null}]
+ -- forward : -9.80
+ -- right : 1.59
+ -- None : 1.42
+ -- left : -10.17
+
+["right", {"light": "red", "oncoming": "left", "right": null, "left": "forward"}]
+ -- forward : -40.48
+ -- right : -18.45
+ -- None : 2.00
+ -- left : -40.23
+
+["right", {"light": "red", "oncoming": null, "right": "right", "left": "left"}]
+ -- forward : -7.10
+ -- right : 1.05
+ -- None : 1.93
+ -- left : -6.33
+
+["forward", {"light": "red", "oncoming": "forward", "right": null, "left": "forward"}]
+ -- forward : -39.44
+ -- right : -19.91
+ -- None : 1.13
+ -- left : -38.92
+
+["left", {"light": "green", "oncoming": "forward", "right": "forward", "left": null}]
+ -- forward : 0.54
+ -- right : 0.70
+ -- None : -3.47
+ -- left : -19.86
+
+["forward", {"light": "red", "oncoming": null, "right": "right", "left": "left"}]
+ -- forward : -6.41
+ -- right : 0.45
+ -- None : 2.51
+ -- left : 0.00
+
+["forward", {"light": "green", "oncoming": "left", "right": "forward", "left": "left"}]
+ -- forward : 0.00
+ -- right : 0.00
+ -- None : 0.00
+ -- left : 0.99
+
+["left", {"light": "red", "oncoming": "forward", "right": "forward", "left": null}]
+ -- forward : -27.30
+ -- right : 0.42
+ -- None : 2.72
+ -- left : 0.00
+
+["right", {"light": "green", "oncoming": null, "right": "forward", "left": "left"}]
+ -- forward : 0.36
+ -- right : 1.88
+ -- None : -5.28
+ -- left : 1.09
+
+["right", {"light": "green", "oncoming": null, "right": "forward", "left": "right"}]
+ -- forward : 0.00
+ -- right : 2.79
+ -- None : -3.15
+ -- left : -0.14
+
+["left", {"light": "red", "oncoming": "forward", "right": "left", "left": "forward"}]
+ -- forward : 0.00
+ -- right : 0.00
+ -- None : 1.36
+ -- left : 0.00
+
+["right", {"light": "red", "oncoming": "forward", "right": "forward", "left": "forward"}]
+ -- forward : 0.00
+ -- right : -14.23
+ -- None : 2.51
+ -- left : -27.87
+
+["left", {"light": "green", "oncoming": null, "right": "forward", "left": null}]
+ -- forward : 0.92
+ -- right : 0.69
+ -- None : -5.08
+ -- left : 1.08
+
+["left", {"light": "green", "oncoming": "forward", "right": "left", "left": "right"}]
+ -- forward : 0.00
+ -- right : 0.33
+ -- None : -3.77
+ -- left : -18.47
+
+["forward", {"light": "green", "oncoming": "left", "right": null, "left": "forward"}]
+ -- forward : 2.05
+ -- right : 0.91
+ -- None : 0.91
+ -- left : 0.49
+
+["left", {"light": "red", "oncoming": "forward", "right": null, "left": "left"}]
+ -- forward : -9.55
+ -- right : 0.16
+ -- None : 1.86
+ -- left : -10.42
+
+["left", {"light": "red", "oncoming": null, "right": null, "left": "left"}]
+ -- forward : -9.19
+ -- right : 0.42
+ -- None : 1.61
+ -- left : -9.52
+
+["forward", {"light": "red", "oncoming": "forward", "right": "right", "left": "right"}]
+ -- forward : -6.79
+ -- right : 1.46
+ -- None : 0.00
+ -- left : 0.00
+
+["forward", {"light": "red", "oncoming": null, "right": null, "left": "right"}]
+ -- forward : -10.50
+ -- right : 0.82
+ -- None : 2.43
+ -- left : -10.02
+
+["right", {"light": "red", "oncoming": "forward", "right": "left", "left": "left"}]
+ -- forward : -7.70
+ -- right : 1.97
+ -- None : 0.00
+ -- left : -6.40
+
+["left", {"light": "green", "oncoming": "left", "right": "right", "left": "right"}]
+ -- forward : 0.76
+ -- right : 0.00
+ -- None : 0.00
+ -- left : 1.48
+
+["forward", {"light": "red", "oncoming": "forward", "right": null, "left": "left"}]
+ -- forward : -9.69
+ -- right : 0.48
+ -- None : 1.57
+ -- left : -10.59
+
+["right", {"light": "green", "oncoming": null, "right": "left", "left": "left"}]
+ -- forward : 0.38
+ -- right : 2.29
+ -- None : -3.07
+ -- left : 1.16
+
+["right", {"light": "green", "oncoming": null, "right": "right", "left": null}]
+ -- forward : -0.47
+ -- right : 1.62
+ -- None : -4.61
+ -- left : 0.45
+
+["right", {"light": "red", "oncoming": "right", "right": "left", "left": "forward"}]
+ -- forward : -27.69
+ -- right : 0.00
+ -- None : 0.00
+ -- left : -27.98
+
+["forward", {"light": "green", "oncoming": "left", "right": null, "left": null}]
+ -- forward : 1.95
+ -- right : 0.50
+ -- None : 0.80
+ -- left : 1.37
+
+["forward", {"light": "red", "oncoming": null, "right": null, "left": null}]
+ -- forward : -9.98
+ -- right : 0.23
+ -- None : 1.36
+ -- left : -9.55
+
+["right", {"light": "green", "oncoming": "left", "right": "left", "left": "forward"}]
+ -- forward : 0.14
+ -- right : 0.00
+ -- None : 0.00
+ -- left : 0.28
+
+["forward", {"light": "green", "oncoming": "left", "right": "forward", "left": "forward"}]
+ -- forward : 0.00
+ -- right : 0.00
+ -- None : 1.64
+ -- left : 0.00
+
+["right", {"light": "red", "oncoming": "forward", "right": "forward", "left": "right"}]
+ -- forward : 0.00
+ -- right : 0.00
+ -- None : 0.00
+ -- left : -27.87
+
+["left", {"light": "green", "oncoming": "left", "right": "forward", "left": null}]
+ -- forward : 0.94
+ -- right : 1.27
+ -- None : -0.34
+ -- left : 1.81
+
+["right", {"light": "red", "oncoming": null, "right": null, "left": "right"}]
+ -- forward : -9.18
+ -- right : 0.86
+ -- None : 2.01
+ -- left : -9.96
+
+["forward", {"light": "green", "oncoming": "forward", "right": null, "left": null}]
+ -- forward : 0.77
+ -- right : -0.35
+ -- None : -5.58
+ -- left : -19.25
+
+["right", {"light": "red", "oncoming": "right", "right": null, "left": null}]
+ -- forward : -9.34
+ -- right : 1.03
+ -- None : 2.40
+ -- left : -39.25
+
+["left", {"light": "red", "oncoming": "left", "right": "right", "left": "forward"}]
+ -- forward : 0.00
+ -- right : 0.00
+ -- None : 1.28
+ -- left : -28.55
+
+["forward", {"light": "green", "oncoming": "left", "right": "forward", "left": null}]
+ -- forward : 2.66
+ -- right : 0.20
+ -- None : 0.14
+ -- left : 0.67
+
+["right", {"light": "green", "oncoming": "left", "right": null, "left": "forward"}]
+ -- forward : 1.04
+ -- right : 2.37
+ -- None : 1.41
+ -- left : 1.30
+
+["left", {"light": "red", "oncoming": "right", "right": null, "left": "forward"}]
+ -- forward : -39.65
+ -- right : 0.00
+ -- None : 1.54
+ -- left : -36.96
+
+["right", {"light": "green", "oncoming": "forward", "right": null, "left": "forward"}]
+ -- forward : 0.29
+ -- right : 1.84
+ -- None : 0.00
+ -- left : -18.28
+
+["forward", {"light": "red", "oncoming": null, "right": "forward", "left": null}]
+ -- forward : -39.59
+ -- right : 0.74
+ -- None : 2.41
+ -- left : -39.68
+
+["left", {"light": "green", "oncoming": "right", "right": "left", "left": null}]
+ -- forward : 0.00
+ -- right : 0.30
+ -- None : -4.14
+ -- left : 0.00
+
+["right", {"light": "green", "oncoming": null, "right": "right", "left": "left"}]
+ -- forward : 0.06
+ -- right : 2.25
+ -- None : 0.00
+ -- left : 0.00
+
+["forward", {"light": "green", "oncoming": "left", "right": "left", "left": null}]
+ -- forward : 0.95
+ -- right : 0.37
+ -- None : 0.91
+ -- left : 1.03
+
+["right", {"light": "red", "oncoming": "left", "right": "forward", "left": "left"}]
+ -- forward : 0.00
+ -- right : 0.00
+ -- None : 2.19
+ -- left : -35.85
+
+["left", {"light": "green", "oncoming": "forward", "right": "forward", "left": "forward"}]
+ -- forward : 0.00
+ -- right : 1.08
+ -- None : 0.00
+ -- left : -13.43
+
+["right", {"light": "green", "oncoming": "right", "right": "forward", "left": null}]
+ -- forward : 0.00
+ -- right : 1.07
+ -- None : -4.46
+ -- left : -14.64
+
+["forward", {"light": "green", "oncoming": "left", "right": "right", "left": "forward"}]
+ -- forward : 0.00
+ -- right : 0.00
+ -- None : 0.00
+ -- left : 0.43
+
+["forward", {"light": "red", "oncoming": "left", "right": "left", "left": "left"}]
+ -- forward : 0.00
+ -- right : 0.63
+ -- None : 0.00
+ -- left : 0.00
+
+["left", {"light": "red", "oncoming": null, "right": "left", "left": "right"}]
+ -- forward : -6.34
+ -- right : 0.47
+ -- None : 2.48
+ -- left : -6.34
+
+["forward", {"light": "green", "oncoming": null, "right": "forward", "left": "forward"}]
+ -- forward : 1.24
+ -- right : 0.30
+ -- None : -5.51
+ -- left : 0.65
+
+["left", {"light": "green", "oncoming": "left", "right": "right", "left": null}]
+ -- forward : 0.20
+ -- right : 0.08
+ -- None : 0.66
+ -- left : 0.00
+
+["right", {"light": "green", "oncoming": "left", "right": "right", "left": "forward"}]
+ -- forward : 0.00
+ -- right : 0.00
+ -- None : 0.00
+ -- left : 0.00
+
+["right", {"light": "red", "oncoming": "left", "right": null, "left": "left"}]
+ -- forward : -9.39
+ -- right : 1.88
+ -- None : 1.84
+ -- left : -6.94
+
+["right", {"light": "green", "oncoming": "left", "right": "forward", "left": "right"}]
+ -- forward : 0.00
+ -- right : 0.00
+ -- None : 0.00
+ -- left : 1.17
+
+["right", {"light": "red", "oncoming": null, "right": "right", "left": "forward"}]
+ -- forward : -36.72
+ -- right : 0.00
+ -- None : 1.14
+ -- left : -28.51
+
+["left", {"light": "green", "oncoming": "left", "right": "right", "left": "left"}]
+ -- forward : 0.00
+ -- right : 1.35
+ -- None : 0.00
+ -- left : 0.00
+
+["left", {"light": "red", "oncoming": "left", "right": "forward", "left": "left"}]
+ -- forward : -36.18
+ -- right : 1.67
+ -- None : 0.00
+ -- left : -35.88
+
+["forward", {"light": "red", "oncoming": "left", "right": "forward", "left": "right"}]
+ -- forward : 0.00
+ -- right : 0.00
+ -- None : 1.95
+ -- left : -28.31
+
+["right", {"light": "red", "oncoming": "right", "right": null, "left": "forward"}]
+ -- forward : 0.00
+ -- right : -18.70
+ -- None : 1.53
+ -- left : -27.79
+
+["left", {"light": "red", "oncoming": "forward", "right": "right", "left": "left"}]
+ -- forward : -6.72
+ -- right : 0.00
+ -- None : 0.00
+ -- left : -6.97
+
+["forward", {"light": "red", "oncoming": "left", "right": "right", "left": null}]
+ -- forward : -10.22
+ -- right : 0.40
+ -- None : 1.80
+ -- left : -10.08
+
+["left", {"light": "red", "oncoming": "right", "right": "forward", "left": "forward"}]
+ -- forward : -28.51
+ -- right : 0.00
+ -- None : 1.40
+ -- left : -28.26
+
+["left", {"light": "green", "oncoming": null, "right": "left", "left": "left"}]
+ -- forward : 0.50
+ -- right : 0.69
+ -- None : -4.72
+ -- left : 2.41
+
+["forward", {"light": "green", "oncoming": null, "right": null, "left": "right"}]
+ -- forward : 2.26
+ -- right : 0.96
+ -- None : -5.02
+ -- left : 0.54
+
+["forward", {"light": "green", "oncoming": "forward", "right": "right", "left": null}]
+ -- forward : 2.25
+ -- right : 0.33
+ -- None : 0.00
+ -- left : -13.72
+
+["left", {"light": "green", "oncoming": "forward", "right": null, "left": "left"}]
+ -- forward : 0.94
+ -- right : -0.09
+ -- None : -3.52
+ -- left : -18.64
+
+["right", {"light": "red", "oncoming": "right", "right": "forward", "left": "left"}]
+ -- forward : 0.00
+ -- right : 1.43
+ -- None : 1.05
+ -- left : -35.98
+
+["forward", {"light": "green", "oncoming": null, "right": "left", "left": "right"}]
+ -- forward : 0.00
+ -- right : 1.21
+ -- None : -4.90
+ -- left : 0.00
+
+["forward", {"light": "green", "oncoming": "right", "right": "left", "left": "forward"}]
+ -- forward : 0.00
+ -- right : 0.21
+ -- None : -3.53
+ -- left : -14.58
+
+["left", {"light": "green", "oncoming": "left", "right": "right", "left": "forward"}]
+ -- forward : 1.07
+ -- right : 0.31
+ -- None : 0.00
+ -- left : 0.00
+
+["left", {"light": "red", "oncoming": "forward", "right": "forward", "left": "left"}]
+ -- forward : -28.46
+ -- right : 0.80
+ -- None : 2.54
+ -- left : -28.03
+
+["forward", {"light": "red", "oncoming": "right", "right": null, "left": null}]
+ -- forward : -10.45
+ -- right : 0.85
+ -- None : 2.35
+ -- left : -40.22
+
+["left", {"light": "green", "oncoming": null, "right": null, "left": null}]
+ -- forward : 0.82
+ -- right : 0.78
+ -- None : -5.00
+ -- left : 1.57
+
+["forward", {"light": "red", "oncoming": "left", "right": "right", "left": "right"}]
+ -- forward : 0.00
+ -- right : 0.00
+ -- None : 1.21
+ -- left : -6.52
+
+["right", {"light": "red", "oncoming": "forward", "right": "right", "left": null}]
+ -- forward : -9.85
+ -- right : 0.00
+ -- None : 1.64
+ -- left : -10.17
+
+["left", {"light": "green", "oncoming": "right", "right": "right", "left": "left"}]
+ -- forward : 0.00
+ -- right : 0.00
+ -- None : 0.00
+ -- left : -14.29
+
+["left", {"light": "green", "oncoming": null, "right": null, "left": "right"}]
+ -- forward : 0.28
+ -- right : 1.29
+ -- None : -5.57
+ -- left : 1.41
+
+["left", {"light": "red", "oncoming": "left", "right": "forward", "left": "forward"}]
+ -- forward : -40.30
+ -- right : -17.59
+ -- None : 0.00
+ -- left : -28.39
+
+["left", {"light": "red", "oncoming": "left", "right": "left", "left": "left"}]
+ -- forward : 0.00
+ -- right : 0.00
+ -- None : 1.92
+ -- left : 0.00
+
+["forward", {"light": "green", "oncoming": null, "right": "forward", "left": null}]
+ -- forward : 1.70
+ -- right : 0.63
+ -- None : -4.49
+ -- left : 0.50
+
+["forward", {"light": "red", "oncoming": "left", "right": "left", "left": "forward"}]
+ -- forward : -28.12
+ -- right : -13.77
+ -- None : 1.15
+ -- left : -39.06
+
+["left", {"light": "red", "oncoming": "right", "right": null, "left": "left"}]
+ -- forward : 0.00
+ -- right : 0.59
+ -- None : 1.34
+ -- left : 0.00
+
+["right", {"light": "green", "oncoming": null, "right": null, "left": "left"}]
+ -- forward : 0.39
+ -- right : 2.79
+ -- None : -5.14
+ -- left : -0.13
+
+["right", {"light": "red", "oncoming": "left", "right": null, "left": null}]
+ -- forward : -9.85
+ -- right : 1.25
+ -- None : 1.32
+ -- left : -9.22
+
+["right", {"light": "red", "oncoming": "forward", "right": null, "left": "left"}]
+ -- forward : -6.47
+ -- right : 1.34
+ -- None : 1.24
+ -- left : -9.63
+
+["left", {"light": "red", "oncoming": "right", "right": "forward", "left": "left"}]
+ -- forward : -36.62
+ -- right : 0.00
+ -- None : 0.00
+ -- left : -27.90
+
+["forward", {"light": "red", "oncoming": "right", "right": "forward", "left": null}]
+ -- forward : 0.00
+ -- right : 0.00
+ -- None : 2.17
+ -- left : -27.52
+
+["right", {"light": "red", "oncoming": null, "right": "left", "left": "right"}]
+ -- forward : -6.33
+ -- right : 0.00
+ -- None : 1.51
+ -- left : -8.99
+
+["left", {"light": "green", "oncoming": "left", "right": "forward", "left": "left"}]
+ -- forward : 0.00
+ -- right : 0.00
+ -- None : 0.54
+ -- left : 0.00
+
+["forward", {"light": "red", "oncoming": "right", "right": "right", "left": null}]
+ -- forward : -10.31
+ -- right : 0.95
+ -- None : 0.00
+ -- left : -28.06
+
+["left", {"light": "green", "oncoming": "left", "right": "left", "left": "left"}]
+ -- forward : 0.00
+ -- right : 1.19
+ -- None : 0.55
+ -- left : 0.00
+
+["left", {"light": "red", "oncoming": "left", "right": null, "left": null}]
+ -- forward : -10.29
+ -- right : 0.30
+ -- None : 1.27
+ -- left : -10.74
+
+["right", {"light": "green", "oncoming": "right", "right": null, "left": "forward"}]
+ -- forward : 1.40
+ -- right : 0.90
+ -- None : -3.97
+ -- left : -14.16
+
+["forward", {"light": "red", "oncoming": null, "right": "forward", "left": "right"}]
+ -- forward : 0.00
+ -- right : 0.00
+ -- None : 2.41
+ -- left : 0.00
+
+["right", {"light": "green", "oncoming": null, "right": "left", "left": "right"}]
+ -- forward : 1.12
+ -- right : 1.57
+ -- None : 0.00
+ -- left : 0.46
+
+["right", {"light": "green", "oncoming": "forward", "right": null, "left": "right"}]
+ -- forward : 1.43
+ -- right : 0.00
+ -- None : -3.25
+ -- left : -13.68
+
+["left", {"light": "red", "oncoming": "right", "right": "left", "left": null}]
+ -- forward : -7.35
+ -- right : 0.73
+ -- None : 0.45
+ -- left : -36.06
+
+["left", {"light": "green", "oncoming": "forward", "right": null, "left": "forward"}]
+ -- forward : 1.46
+ -- right : 0.35
+ -- None : 0.00
+ -- left : -14.46
+
+["left", {"light": "green", "oncoming": null, "right": "left", "left": "forward"}]
+ -- forward : 0.93
+ -- right : 0.82
+ -- None : -4.46
+ -- left : 1.92
+
+["forward", {"light": "green", "oncoming": "right", "right": "left", "left": "left"}]
+ -- forward : 0.00
+ -- right : 0.80
+ -- None : -3.02
+ -- left : -14.07
+
+["forward", {"light": "green", "oncoming": "right", "right": null, "left": null}]
+ -- forward : 2.10
+ -- right : 0.38
+ -- None : -4.48
+ -- left : -19.31
+
+["forward", {"light": "red", "oncoming": "forward", "right": "left", "left": "left"}]
+ -- forward : 0.00
+ -- right : 1.41
+ -- None : 0.00
+ -- left : 0.00
+
+["left", {"light": "red", "oncoming": null, "right": "right", "left": "forward"}]
+ -- forward : -27.86
+ -- right : -17.67
+ -- None : 0.00
+ -- left : -28.62
+
+["right", {"light": "red", "oncoming": "left", "right": "forward", "left": "forward"}]
+ -- forward : -28.40
+ -- right : 0.00
+ -- None : 2.19
+ -- left : 0.00
+
+["forward", {"light": "green", "oncoming": null, "right": "right", "left": "left"}]
+ -- forward : 2.43
+ -- right : 0.00
+ -- None : 0.00
+ -- left : 0.81
+
+["left", {"light": "green", "oncoming": "forward", "right": "left", "left": null}]
+ -- forward : 0.38
+ -- right : 0.15
+ -- None : -3.91
+ -- left : -13.87
+
+["forward", {"light": "red", "oncoming": "forward", "right": "forward", "left": "forward"}]
+ -- forward : 0.00
+ -- right : 0.00
+ -- None : 1.24
+ -- left : -28.51
+
+["left", {"light": "green", "oncoming": "right", "right": "forward", "left": null}]
+ -- forward : 0.60
+ -- right : 1.44
+ -- None : -4.51
+ -- left : -14.14
+
+["right", {"light": "red", "oncoming": "left", "right": "left", "left": "right"}]
+ -- forward : 0.00
+ -- right : 2.65
+ -- None : 1.18
+ -- left : 0.00
+
+["forward", {"light": "green", "oncoming": "left", "right": "left", "left": "right"}]
+ -- forward : 1.43
+ -- right : 0.74
+ -- None : 0.64
+ -- left : 0.00
+
+["right", {"light": "red", "oncoming": "right", "right": "left", "left": null}]
+ -- forward : -9.02
+ -- right : 2.38
+ -- None : 0.00
+ -- left : -28.57
+
+["right", {"light": "red", "oncoming": "forward", "right": "right", "left": "right"}]
+ -- forward : -7.67
+ -- right : 2.20
+ -- None : 0.00
+ -- left : 0.00
+
+["forward", {"light": "green", "oncoming": "forward", "right": null, "left": "forward"}]
+ -- forward : 2.17
+ -- right : 0.00
+ -- None : 0.00
+ -- left : -20.31
+
+["left", {"light": "red", "oncoming": null, "right": null, "left": "forward"}]
+ -- forward : -39.84
+ -- right : -20.85
+ -- None : 1.63
+ -- left : -40.02
+
+["right", {"light": "red", "oncoming": null, "right": "right", "left": "right"}]
+ -- forward : -7.21
+ -- right : 1.40
+ -- None : 0.00
+ -- left : 0.00
+
+["right", {"light": "red", "oncoming": "forward", "right": "left", "left": "forward"}]
+ -- forward : -28.62
+ -- right : -14.21
+ -- None : 1.75
+ -- left : -27.72
+
+["left", {"light": "red", "oncoming": "left", "right": null, "left": "left"}]
+ -- forward : -9.64
+ -- right : 0.44
+ -- None : 1.56
+ -- left : -9.18
+
+["forward", {"light": "green", "oncoming": "forward", "right": null, "left": "left"}]
+ -- forward : 1.70
+ -- right : 0.25
+ -- None : -4.90
+ -- left : -18.76
+
+["right", {"light": "green", "oncoming": "left", "right": "right", "left": null}]
+ -- forward : 0.13
+ -- right : 1.41
+ -- None : 0.20
+ -- left : 0.26
+
+["forward", {"light": "green", "oncoming": "right", "right": null, "left": "left"}]
+ -- forward : 0.00
+ -- right : 0.57
+ -- None : -4.55
+ -- left : -17.66
+
+["right", {"light": "green", "oncoming": null, "right": "forward", "left": null}]
+ -- forward : 0.46
+ -- right : 1.92
+ -- None : -4.59
+ -- left : 1.04
+
+["forward", {"light": "green", "oncoming": null, "right": "left", "left": "forward"}]
+ -- forward : 2.14
+ -- right : 0.30
+ -- None : -5.42
+ -- left : 0.38
+
+["forward", {"light": "green", "oncoming": "right", "right": "forward", "left": null}]
+ -- forward : 2.52
+ -- right : -0.11
+ -- None : 0.00
+ -- left : 0.00
+
+["right", {"light": "green", "oncoming": "right", "right": "left", "left": "forward"}]
+ -- forward : 1.46
+ -- right : 0.00
+ -- None : -3.51
+ -- left : 0.00
+
+["left", {"light": "red", "oncoming": "right", "right": "left", "left": "right"}]
+ -- forward : 0.00
+ -- right : 0.00
+ -- None : 0.94
+ -- left : -28.13
+
+["forward", {"light": "red", "oncoming": "left", "right": "left", "left": null}]
+ -- forward : -10.36
+ -- right : 0.12
+ -- None : 1.73
+ -- left : -9.76
+
+["left", {"light": "green", "oncoming": "left", "right": "forward", "left": "forward"}]
+ -- forward : 0.27
+ -- right : 0.00
+ -- None : 0.99
+ -- left : 0.00
+
+["forward", {"light": "red", "oncoming": "left", "right": "forward", "left": null}]
+ -- forward : -39.10
+ -- right : 0.35
+ -- None : 2.31
+ -- left : 0.00
+
+["forward", {"light": "green", "oncoming": "right", "right": "forward", "left": "left"}]
+ -- forward : 0.00
+ -- right : 0.00
+ -- None : -3.64
+ -- left : -14.26
+
+["forward", {"light": "red", "oncoming": "left", "right": "forward", "left": "left"}]
+ -- forward : 0.00
+ -- right : 1.13
+ -- None : 0.00
+ -- left : -36.74
+
+["right", {"light": "red", "oncoming": "forward", "right": "right", "left": "forward"}]
+ -- forward : 0.00
+ -- right : 0.00
+ -- None : 2.01
+ -- left : 0.00
+
+["left", {"light": "green", "oncoming": "forward", "right": "right", "left": "left"}]
+ -- forward : 0.00
+ -- right : 0.00
+ -- None : 0.00
+ -- left : -14.09
+
+["forward", {"light": "green", "oncoming": null, "right": "forward", "left": "right"}]
+ -- forward : 0.00
+ -- right : 0.39
+ -- None : -3.13
+ -- left : 1.47
+
+["forward", {"light": "red", "oncoming": "forward", "right": "left", "left": "right"}]
+ -- forward : -7.19
+ -- right : 0.00
+ -- None : 0.00
+ -- left : -6.48
+
+["left", {"light": "red", "oncoming": null, "right": "left", "left": "forward"}]
+ -- forward : -40.12
+ -- right : -19.30
+ -- None : 1.48
+ -- left : -36.28
+
+["left", {"light": "green", "oncoming": null, "right": "forward", "left": "forward"}]
+ -- forward : 0.75
+ -- right : 0.49
+ -- None : -4.00
+ -- left : 1.98
+
+["forward", {"light": "red", "oncoming": "left", "right": "right", "left": "forward"}]
+ -- forward : -27.37
+ -- right : -14.14
+ -- None : 1.57
+ -- left : -27.48
+
+["right", {"light": "red", "oncoming": "left", "right": "forward", "left": null}]
+ -- forward : -36.91
+ -- right : 1.80
+ -- None : 0.00
+ -- left : -35.80
+
+["left", {"light": "red", "oncoming": "left", "right": "forward", "left": "right"}]
+ -- forward : -28.65
+ -- right : 0.00
+ -- None : 1.70
+ -- left : 0.00
+
+["forward", {"light": "red", "oncoming": null, "right": "forward", "left": "left"}]
+ -- forward : -39.28
+ -- right : 0.58
+ -- None : 1.46
+ -- left : -39.32
+
+["right", {"light": "red", "oncoming": null, "right": "left", "left": null}]
+ -- forward : -9.71
+ -- right : 2.22
+ -- None : 1.00
+ -- left : -10.68
+
+["right", {"light": "red", "oncoming": null, "right": null, "left": "forward"}]
+ -- forward : -40.29
+ -- right : -20.59
+ -- None : 2.14
+ -- left : -40.41
+
+["right", {"light": "green", "oncoming": "left", "right": null, "left": "right"}]
+ -- forward : 0.00
+ -- right : 1.55
+ -- None : 0.75
+ -- left : 1.49
+
+["left", {"light": "green", "oncoming": "right", "right": null, "left": "left"}]
+ -- forward : -0.19
+ -- right : 0.00
+ -- None : -2.92
+ -- left : -17.69
+
+["right", {"light": "red", "oncoming": "left", "right": "right", "left": null}]
+ -- forward : -10.43
+ -- right : 1.62
+ -- None : 1.42
+ -- left : -7.34
+
+["right", {"light": "red", "oncoming": "left", "right": "left", "left": "left"}]
+ -- forward : -9.18
+ -- right : 0.00
+ -- None : 1.07
+ -- left : -8.95
+
+["left", {"light": "green", "oncoming": "left", "right": null, "left": "forward"}]
+ -- forward : 0.62
+ -- right : 0.34
+ -- None : 0.00
+ -- left : 2.00
+
+["left", {"light": "green", "oncoming": "right", "right": "right", "left": null}]
+ -- forward : 0.00
+ -- right : 0.60
+ -- None : -3.07
+ -- left : -20.07
+
+["right", {"light": "red", "oncoming": "left", "right": null, "left": "right"}]
+ -- forward : -9.62
+ -- right : 0.82
+ -- None : 0.37
+ -- left : -9.06
+
+["left", {"light": "red", "oncoming": "right", "right": "right", "left": "left"}]
+ -- forward : 0.00
+ -- right : 0.33
+ -- None : 0.00
+ -- left : 0.00
+
+["forward", {"light": "red", "oncoming": null, "right": null, "left": "left"}]
+ -- forward : -10.59
+ -- right : 0.28
+ -- None : 2.41
+ -- left : -10.36
+
+["left", {"light": "red", "oncoming": "forward", "right": "left", "left": "left"}]
+ -- forward : 0.00
+ -- right : 0.00
+ -- None : 0.00
+ -- left : -7.64
+
+["right", {"light": "red", "oncoming": null, "right": "left", "left": "left"}]
+ -- forward : -7.55
+ -- right : 0.88
+ -- None : 1.63
+ -- left : -7.52
+
+["left", {"light": "green", "oncoming": "forward", "right": "right", "left": null}]
+ -- forward : 1.36
+ -- right : -0.19
+ -- None : 0.00
+ -- left : 0.00
+
+["left", {"light": "red", "oncoming": "right", "right": null, "left": "right"}]
+ -- forward : 0.00
+ -- right : 0.00
+ -- None : 2.24
+ -- left : -28.68
+
+["forward", {"light": "green", "oncoming": "left", "right": "right", "left": "left"}]
+ -- forward : 0.84
+ -- right : 0.28
+ -- None : 0.00
+ -- left : 0.00
+
+["left", {"light": "green", "oncoming": "right", "right": "forward", "left": "forward"}]
+ -- forward : 0.00
+ -- right : 0.00
+ -- None : 0.00
+ -- left : -13.81
+
+["left", {"light": "red", "oncoming": null, "right": "right", "left": "left"}]
+ -- forward : -8.72
+ -- right : 1.78
+ -- None : 0.87
+ -- left : 0.00
+
+["forward", {"light": "green", "oncoming": "forward", "right": "forward", "left": null}]
+ -- forward : 2.06
+ -- right : 0.41
+ -- None : -4.12
+ -- left : -13.38
+
+["left", {"light": "green", "oncoming": "right", "right": "right", "left": "right"}]
+ -- forward : 0.00
+ -- right : 0.00
+ -- None : 0.00
+ -- left : -13.72
+
+["left", {"light": "red", "oncoming": "left", "right": "forward", "left": null}]
+ -- forward : -40.44
+ -- right : 0.43
+ -- None : 0.98
+ -- left : -39.55
+
+["right", {"light": "green", "oncoming": "forward", "right": "forward", "left": null}]
+ -- forward : 0.33
+ -- right : 2.14
+ -- None : -3.79
+ -- left : 0.00
+
+["forward", {"light": "red", "oncoming": "right", "right": "forward", "left": "left"}]
+ -- forward : -35.96
+ -- right : 0.00
+ -- None : 2.62
+ -- left : -38.89
+
+["forward", {"light": "red", "oncoming": "left", "right": "right", "left": "left"}]
+ -- forward : -7.48
+ -- right : 0.07
+ -- None : 0.00
+ -- left : 0.00
+
+["left", {"light": "red", "oncoming": "forward", "right": null, "left": null}]
+ -- forward : -9.61
+ -- right : 0.28
+ -- None : 1.41
+ -- left : -10.65
+
+["left", {"light": "red", "oncoming": "left", "right": "right", "left": null}]
+ -- forward : -9.48
+ -- right : 0.07
+ -- None : 2.32
+ -- left : -8.92
+
+["right", {"light": "green", "oncoming": "right", "right": "left", "left": null}]
+ -- forward : -0.19
+ -- right : 0.92
+ -- None : -3.80
+ -- left : 0.00
+
+["forward", {"light": "red", "oncoming": "forward", "right": "forward", "left": "right"}]
+ -- forward : -27.77
+ -- right : 0.00
+ -- None : 0.86
+ -- left : 0.00
+
+["forward", {"light": "red", "oncoming": null, "right": "right", "left": "forward"}]
+ -- forward : 0.00
+ -- right : 0.00
+ -- None : 1.59
+ -- left : -27.85
+
+["forward", {"light": "red", "oncoming": "forward", "right": "forward", "left": null}]
+ -- forward : -40.31
+ -- right : 0.72
+ -- None : 1.18
+ -- left : -38.97
+
+["forward", {"light": "red", "oncoming": null, "right": null, "left": "forward"}]
+ -- forward : -39.76
+ -- right : -19.83
+ -- None : 2.19
+ -- left : -40.42
+
+["right", {"light": "green", "oncoming": "forward", "right": "left", "left": null}]
+ -- forward : 0.41
+ -- right : 0.00
+ -- None : -5.12
+ -- left : 0.00
+
+["forward", {"light": "red", "oncoming": "right", "right": "right", "left": "right"}]
+ -- forward : 0.00
+ -- right : 0.00
+ -- None : 0.80
+ -- left : -28.34
+
+["left", {"light": "red", "oncoming": null, "right": "forward", "left": "right"}]
+ -- forward : -38.40
+ -- right : 0.00
+ -- None : 1.39
+ -- left : -27.67
+
+["forward", {"light": "green", "oncoming": null, "right": "left", "left": "left"}]
+ -- forward : 2.25
+ -- right : 1.08
+ -- None : -5.69
+ -- left : 0.89
+
+["forward", {"light": "red", "oncoming": "forward", "right": null, "left": "right"}]
+ -- forward : -10.60
+ -- right : 0.49
+ -- None : 2.06
+ -- left : 0.00
+
+["right", {"light": "green", "oncoming": null, "right": null, "left": null}]
+ -- forward : 1.11
+ -- right : 1.89
+ -- None : -5.82
+ -- left : 1.11
+
+["left", {"light": "green", "oncoming": null, "right": "right", "left": "right"}]
+ -- forward : 0.00
+ -- right : 0.00
+ -- None : -3.96
+ -- left : 2.51
+
+["left", {"light": "green", "oncoming": "right", "right": "forward", "left": "right"}]
+ -- forward : 0.00
+ -- right : 0.00
+ -- None : 0.00
+ -- left : -13.35
+
+["forward", {"light": "red", "oncoming": "forward", "right": null, "left": null}]
+ -- forward : -10.06
+ -- right : 0.60
+ -- None : 1.88
+ -- left : -9.78
+
+["forward", {"light": "red", "oncoming": "right", "right": null, "left": "forward"}]
+ -- forward : -28.04
+ -- right : -13.75
+ -- None : 2.15
+ -- left : -35.76
+
+["right", {"light": "red", "oncoming": null, "right": "forward", "left": "forward"}]
+ -- forward : -27.65
+ -- right : -20.09
+ -- None : 1.23
+ -- left : -39.44
+
+["right", {"light": "green", "oncoming": "forward", "right": "forward", "left": "right"}]
+ -- forward : 0.34
+ -- right : 1.03
+ -- None : 0.00
+ -- left : 0.00
+
